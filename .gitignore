@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Model weights and generated artifacts
+models/*
+!models/.gitkeep
+outputs/
+reports/generated/
+
+# Local data
+data/raw/*
+!data/raw/.gitkeep
+*.log
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
