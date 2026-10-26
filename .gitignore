@@ -14,6 +14,7 @@ venv/
 
 # Model weights and generated artifacts
 models/*
+weights/
 !models/.gitkeep
 outputs/
 reports/generated/
