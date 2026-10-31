@@ -1,0 +1,193 @@
+{
+  "input": {
+    "image": "data/samples/healthy_bowl_unsplash.jpg",
+    "profile": {
+      "height_cm": 170.0,
+      "weight_kg": 65.0,
+      "body_fat_pct": null,
+      "goal": "fat_loss",
+      "context": "post_workout",
+      "plate_diameter_cm": 26.0
+    }
+  },
+  "traditional": {
+    "method": "traditional",
+    "status": "ok",
+    "foods": [
+      {
+        "name": "青椒",
+        "confidence": 0.638,
+        "bbox": [
+          758.6,
+          338.8,
+          122.7,
+          144.6
+        ],
+        "mask_area_ratio": 0.0099,
+        "estimated_grams": [
+          5.2,
+          9.8
+        ],
+        "nutrition": {
+          "calories": 2,
+          "protein_g": 0.1,
+          "carbs_g": 0.3,
+          "fat_g": 0.0,
+          "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+        },
+        "verdict": {
+          "calorie_status": "不足",
+          "protein_status": "偏少",
+          "carb_ratio": "适中",
+          "summary": "青椒约提供 2 kcal、0.1 g 蛋白质；整餐判断见上方结论。"
+        },
+        "source_id": "green_pepper"
+      },
+      {
+        "name": "青椒",
+        "confidence": 0.638,
+        "bbox": [
+          1068.1,
+          432.4,
+          204.1,
+          228.2
+        ],
+        "mask_area_ratio": 0.025,
+        "estimated_grams": [
+          12.5,
+          23.2
+        ],
+        "nutrition": {
+          "calories": 4,
+          "protein_g": 0.2,
+          "carbs_g": 0.8,
+          "fat_g": 0.0,
+          "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+        },
+        "verdict": {
+          "calorie_status": "不足",
+          "protein_status": "偏少",
+          "carb_ratio": "偏高",
+          "summary": "青椒约提供 4 kcal、0.2 g 蛋白质；整餐判断见上方结论。"
+        },
+        "source_id": "green_pepper"
+      }
+    ],
+    "totals": {
+      "calories": 6,
+      "protein_g": 0.3,
+      "carbs_g": 1.1,
+      "fat_g": 0.0
+    },
+    "verdict": {
+      "calorie_status": "不足",
+      "protein_status": "不足",
+      "carb_ratio": "偏高",
+      "summary": "本餐估算约 6 kcal、蛋白质 0.3 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比偏高。热量主要来自青椒（约 4 kcal）。"
+    },
+    "advice": [
+      "下一顿增加一掌心大小的瘦肉、鱼虾、鸡蛋或豆腐。",
+      "同时保持饮水，不需要用高糖饮料补充能量。"
+    ],
+    "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+    "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+    "warnings": [],
+    "duration_ms": 6770,
+    "overlay_image_base64": null,
+    "metadata": {
+      "target": {
+        "daily_calories": 1625,
+        "meal_calories": 623,
+        "meal_protein_g": 44.8,
+        "estimate_only": true
+      },
+      "calorie_ratio": 0.01,
+      "protein_ratio": 0.007,
+      "carb_calorie_share": 0.733,
+      "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+      "detection_count": 2,
+      "segmentation_used": true,
+      "models_available": true,
+      "device": "0"
+    }
+  },
+  "vlm": {
+    "method": "vlm",
+    "status": "error",
+    "foods": [],
+    "totals": {
+      "calories": 0,
+      "protein_g": 0.0,
+      "carbs_g": 0.0,
+      "fat_g": 0.0
+    },
+    "verdict": {
+      "calorie_status": "无法判断",
+      "protein_status": "无法判断",
+      "carb_ratio": "无法判断",
+      "summary": "未配置多模态 API Key。请设置 DASHSCOPE_API_KEY 后重试；当前不会伪造大模型结果。"
+    },
+    "advice": [
+      "配置 API Key 后重新评估；也可以先查看左侧传统方案结果。"
+    ],
+    "long_term_note": "单顿不决定结果；模型不可用时不应编造营养结论。",
+    "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+    "warnings": [
+      "未配置多模态 API Key。请设置 DASHSCOPE_API_KEY 后重试；当前不会伪造大模型结果。"
+    ],
+    "duration_ms": 12,
+    "overlay_image_base64": null,
+    "metadata": {
+      "pipeline": "Qwen-VL structured JSON",
+      "configured": false
+    }
+  },
+  "comparison": {
+    "rows": [
+      {
+        "dimension": "识别食物",
+        "traditional": "青椒",
+        "vlm": "不可用",
+        "conclusion": "名称重合 0 项，集合重合度约 0%。"
+      },
+      {
+        "dimension": "定位与分割",
+        "traditional": "提供边界框与 SAM 掩膜面积。",
+        "vlm": "可能提供粗略归一化边界框，无像素级掩膜。",
+        "conclusion": "传统方案的视觉证据更可复核。"
+      },
+      {
+        "dimension": "营养估算",
+        "traditional": "约 6 kcal。",
+        "vlm": "约 0 kcal。",
+        "conclusion": "热量差约 6 kcal（100%），两者都只是估算。"
+      },
+      {
+        "dimension": "情境反馈",
+        "traditional": "规则覆盖固定，结论稳定。",
+        "vlm": "自然语言更灵活，可理解混合菜名与上下文。",
+        "conclusion": "传统方案可复现，大模型方案表达更自然。"
+      },
+      {
+        "dimension": "速度",
+        "traditional": "6.77 秒。",
+        "vlm": "0.01 秒。",
+        "conclusion": "传统模型通常本地推理更快，首次加载除外。"
+      },
+      {
+        "dimension": "成本",
+        "traditional": "本地推理，无单次 API 费用。",
+        "vlm": "按图片与模型计费，受免费额度和供应商价格影响。",
+        "conclusion": "固定高频场景更适合传统方案。"
+      },
+      {
+        "dimension": "可解释性",
+        "traditional": "平均检测置信度 0.64；每个数值可追溯到食物表和公式。",
+        "vlm": "模型自报平均置信度 0.00；置信度不能等同于事实校准。",
+        "conclusion": "传统管线更容易定位错误来源。"
+      }
+    ],
+    "summary": "多模态模型当前不可用，本次对比仅完成了传统方案。配置 API Key 后应重新执行同一张图片的对照。",
+    "recommended_use": "稳定菜单、需要可解释定位和批量处理时用传统方案；开放菜品、需要自然语言解释时用多模态大模型；最终产品可让传统模型负责数值、大模型负责情境反馈。"
+  }
+}

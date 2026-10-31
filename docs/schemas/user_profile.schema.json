@@ -1,0 +1,70 @@
+{
+  "$defs": {
+    "Goal": {
+      "enum": [
+        "fat_loss",
+        "muscle_gain",
+        "maintain"
+      ],
+      "title": "Goal",
+      "type": "string"
+    },
+    "MealContext": {
+      "enum": [
+        "pre_workout",
+        "post_workout",
+        "rest_day",
+        "snack"
+      ],
+      "title": "MealContext",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "height_cm": {
+      "default": 170,
+      "maximum": 250,
+      "minimum": 100,
+      "title": "Height Cm",
+      "type": "number"
+    },
+    "weight_kg": {
+      "default": 65,
+      "maximum": 300,
+      "minimum": 30,
+      "title": "Weight Kg",
+      "type": "number"
+    },
+    "body_fat_pct": {
+      "anyOf": [
+        {
+          "maximum": 60,
+          "minimum": 3,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Body Fat Pct"
+    },
+    "goal": {
+      "$ref": "#/$defs/Goal",
+      "default": "maintain"
+    },
+    "context": {
+      "$ref": "#/$defs/MealContext",
+      "default": "rest_day"
+    },
+    "plate_diameter_cm": {
+      "default": 26,
+      "maximum": 45,
+      "minimum": 15,
+      "title": "Plate Diameter Cm",
+      "type": "number"
+    }
+  },
+  "title": "UserProfile",
+  "type": "object"
+}

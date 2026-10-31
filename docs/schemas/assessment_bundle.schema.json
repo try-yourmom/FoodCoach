@@ -1,0 +1,455 @@
+{
+  "$defs": {
+    "ComparisonReport": {
+      "properties": {
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/ComparisonRow"
+          },
+          "title": "Rows",
+          "type": "array"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "recommended_use": {
+          "title": "Recommended Use",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rows",
+        "summary",
+        "recommended_use"
+      ],
+      "title": "ComparisonReport",
+      "type": "object"
+    },
+    "ComparisonRow": {
+      "properties": {
+        "dimension": {
+          "title": "Dimension",
+          "type": "string"
+        },
+        "traditional": {
+          "title": "Traditional",
+          "type": "string"
+        },
+        "vlm": {
+          "title": "Vlm",
+          "type": "string"
+        },
+        "conclusion": {
+          "title": "Conclusion",
+          "type": "string"
+        }
+      },
+      "required": [
+        "dimension",
+        "traditional",
+        "vlm",
+        "conclusion"
+      ],
+      "title": "ComparisonRow",
+      "type": "object"
+    },
+    "FoodItem": {
+      "properties": {
+        "name": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "mask_area_ratio": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mask Area Ratio"
+        },
+        "estimated_grams": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Estimated Grams"
+        },
+        "nutrition": {
+          "$ref": "#/$defs/NutritionEstimate"
+        },
+        "verdict": {
+          "$ref": "#/$defs/FoodVerdict"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Id"
+        }
+      },
+      "required": [
+        "name",
+        "confidence",
+        "nutrition",
+        "verdict"
+      ],
+      "title": "FoodItem",
+      "type": "object"
+    },
+    "FoodVerdict": {
+      "properties": {
+        "calorie_status": {
+          "title": "Calorie Status",
+          "type": "string"
+        },
+        "protein_status": {
+          "title": "Protein Status",
+          "type": "string"
+        },
+        "carb_ratio": {
+          "title": "Carb Ratio",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        }
+      },
+      "required": [
+        "calorie_status",
+        "protein_status",
+        "carb_ratio",
+        "summary"
+      ],
+      "title": "FoodVerdict",
+      "type": "object"
+    },
+    "Goal": {
+      "enum": [
+        "fat_loss",
+        "muscle_gain",
+        "maintain"
+      ],
+      "title": "Goal",
+      "type": "string"
+    },
+    "MealContext": {
+      "enum": [
+        "pre_workout",
+        "post_workout",
+        "rest_day",
+        "snack"
+      ],
+      "title": "MealContext",
+      "type": "string"
+    },
+    "MealTotals": {
+      "properties": {
+        "calories": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Calories",
+          "type": "integer"
+        },
+        "protein_g": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Protein G",
+          "type": "number"
+        },
+        "carbs_g": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Carbs G",
+          "type": "number"
+        },
+        "fat_g": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Fat G",
+          "type": "number"
+        }
+      },
+      "title": "MealTotals",
+      "type": "object"
+    },
+    "MealVerdict": {
+      "properties": {
+        "calorie_status": {
+          "title": "Calorie Status",
+          "type": "string"
+        },
+        "protein_status": {
+          "title": "Protein Status",
+          "type": "string"
+        },
+        "carb_ratio": {
+          "title": "Carb Ratio",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        }
+      },
+      "required": [
+        "calorie_status",
+        "protein_status",
+        "carb_ratio",
+        "summary"
+      ],
+      "title": "MealVerdict",
+      "type": "object"
+    },
+    "MethodResult": {
+      "properties": {
+        "method": {
+          "enum": [
+            "traditional",
+            "vlm"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "status": {
+          "default": "ok",
+          "enum": [
+            "ok",
+            "degraded",
+            "error"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "foods": {
+          "items": {
+            "$ref": "#/$defs/FoodItem"
+          },
+          "title": "Foods",
+          "type": "array"
+        },
+        "totals": {
+          "$ref": "#/$defs/MealTotals"
+        },
+        "verdict": {
+          "$ref": "#/$defs/MealVerdict"
+        },
+        "advice": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Advice",
+          "type": "array"
+        },
+        "long_term_note": {
+          "title": "Long Term Note",
+          "type": "string"
+        },
+        "disclaimer": {
+          "default": "仅供学习参考，不构成医疗或营养建议。",
+          "title": "Disclaimer",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "duration_ms": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Duration Ms",
+          "type": "integer"
+        },
+        "overlay_image_base64": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Overlay Image Base64"
+        },
+        "metadata": {
+          "additionalProperties": true,
+          "title": "Metadata",
+          "type": "object"
+        }
+      },
+      "required": [
+        "method",
+        "verdict",
+        "long_term_note"
+      ],
+      "title": "MethodResult",
+      "type": "object"
+    },
+    "NutritionEstimate": {
+      "properties": {
+        "calories": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Calories",
+          "type": "integer"
+        },
+        "protein_g": {
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Protein G",
+          "type": "number"
+        },
+        "carbs_g": {
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Carbs G",
+          "type": "number"
+        },
+        "fat_g": {
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Fat G",
+          "type": "number"
+        },
+        "note": {
+          "default": "估算值",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "calories",
+        "protein_g",
+        "carbs_g",
+        "fat_g"
+      ],
+      "title": "NutritionEstimate",
+      "type": "object"
+    },
+    "UserProfile": {
+      "properties": {
+        "height_cm": {
+          "default": 170,
+          "maximum": 250,
+          "minimum": 100,
+          "title": "Height Cm",
+          "type": "number"
+        },
+        "weight_kg": {
+          "default": 65,
+          "maximum": 300,
+          "minimum": 30,
+          "title": "Weight Kg",
+          "type": "number"
+        },
+        "body_fat_pct": {
+          "anyOf": [
+            {
+              "maximum": 60,
+              "minimum": 3,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Body Fat Pct"
+        },
+        "goal": {
+          "$ref": "#/$defs/Goal",
+          "default": "maintain"
+        },
+        "context": {
+          "$ref": "#/$defs/MealContext",
+          "default": "rest_day"
+        },
+        "plate_diameter_cm": {
+          "default": 26,
+          "maximum": 45,
+          "minimum": 15,
+          "title": "Plate Diameter Cm",
+          "type": "number"
+        }
+      },
+      "title": "UserProfile",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "request_id": {
+      "title": "Request Id",
+      "type": "string"
+    },
+    "traditional": {
+      "$ref": "#/$defs/MethodResult"
+    },
+    "vlm": {
+      "$ref": "#/$defs/MethodResult"
+    },
+    "comparison": {
+      "$ref": "#/$defs/ComparisonReport"
+    },
+    "profile": {
+      "$ref": "#/$defs/UserProfile"
+    }
+  },
+  "required": [
+    "request_id",
+    "traditional",
+    "vlm",
+    "comparison",
+    "profile"
+  ],
+  "title": "AssessmentBundle",
+  "type": "object"
+}

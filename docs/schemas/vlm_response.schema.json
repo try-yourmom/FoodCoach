@@ -1,0 +1,136 @@
+{
+  "$defs": {
+    "VLMFoodPayload": {
+      "properties": {
+        "name": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "confidence": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "estimated_grams": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Estimated Grams"
+        },
+        "nutrition": {
+          "$ref": "#/$defs/VLMNutritionPayload"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "nutrition"
+      ],
+      "title": "VLMFoodPayload",
+      "type": "object"
+    },
+    "VLMNutritionPayload": {
+      "properties": {
+        "calories": {
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Calories",
+          "type": "number"
+        },
+        "protein_g": {
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Protein G",
+          "type": "number"
+        },
+        "carbs_g": {
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Carbs G",
+          "type": "number"
+        },
+        "fat_g": {
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Fat G",
+          "type": "number"
+        }
+      },
+      "required": [
+        "calories",
+        "protein_g",
+        "carbs_g",
+        "fat_g"
+      ],
+      "title": "VLMNutritionPayload",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "foods": {
+      "items": {
+        "$ref": "#/$defs/VLMFoodPayload"
+      },
+      "title": "Foods",
+      "type": "array"
+    },
+    "advice": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Advice",
+      "type": "array"
+    },
+    "long_term_note": {
+      "default": "",
+      "title": "Long Term Note",
+      "type": "string"
+    },
+    "disclaimer": {
+      "default": "仅供学习参考，不构成医疗或营养建议。",
+      "title": "Disclaimer",
+      "type": "string"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "title": "VLMResponsePayload",
+  "type": "object"
+}

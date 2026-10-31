@@ -170,6 +170,19 @@ Content-Type: multipart/form-data
 }
 ```
 
+## 示例输出与 Schema
+
+- 实际运行导出的示例：[example_output.json](docs/examples/example_output.json)
+- 统一数据契约：[schemas](docs/schemas)
+- 重新导出当前示例：
+
+```powershell
+F:\Miniforge3\envs\lingjing-ai\python.exe scripts\export_example.py
+F:\Miniforge3\envs\lingjing-ai\python.exe app\schemas_export.py
+```
+
+未配置 VLM Key 时，示例中的大模型部分会明确显示为 `error`，不会生成虚假结果；配置 Key 后重新导出即可得到完整双方案示例。
+
 ## 测试
 
 ```powershell
