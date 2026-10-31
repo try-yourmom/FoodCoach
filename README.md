@@ -41,7 +41,7 @@ flowchart LR
 
 ### 多模态方案
 
-- 默认使用阿里云百炼的 Qwen-VL，通过 OpenAI 兼容接口调用
+- 默认使用阿里云百炼的 Qwen3.8-Omni-Flash，通过 OpenAI 兼容接口调用；如果 Flash 在固定测试集上的识别或 JSON 稳定性不足，再切换到 Qwen3-VL-Plus
 - 输入图片、用户简况、目标和用餐情境
 - 要求模型返回固定 JSON，服务端用 Pydantic 二次校验
 - JSON 无效时修复一次，仍失败则明确报错，不伪造结果
@@ -77,7 +77,7 @@ F:\Miniforge3\envs\lingjing-ai\python.exe -m pip install -r requirements-torch.t
 
 ```env
 DASHSCOPE_API_KEY=你的本地密钥
-VLM_MODEL=qwen-vl-plus
+VLM_MODEL=qwen3.8-omni-flash
 ```
 
 `.env` 已被 Git 忽略，禁止把 Key 提交到仓库。未配置 Key 时，传统方案仍可运行，大模型方案会明确显示为不可用。

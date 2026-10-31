@@ -44,7 +44,7 @@ class Settings:
             "VLM_BASE_URL",
             "https://dashscope.aliyuncs.com/compatible-mode/v1",
         ).strip()
-        self.vlm_model = os.getenv("VLM_MODEL", "qwen-vl-plus").strip()
+        self.vlm_model = os.getenv("VLM_MODEL", "qwen3.8-omni-flash").strip()
         self.vlm_timeout_seconds = float(os.getenv("VLM_TIMEOUT_SECONDS", "90"))
         self.vlm_allow_mock = _as_bool(os.getenv("VLM_ALLOW_MOCK"), False)
 
