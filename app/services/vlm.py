@@ -100,6 +100,9 @@ class VLMService:
             "temperature": 0.2,
             "max_tokens": 2400,
         }
+        if "omni" in settings.vlm_model.lower():
+            # Omni models distinguish output modalities; PlateLens only needs text.
+            kwargs["modalities"] = ["text"]
         try:
             return client.chat.completions.create(response_format={"type": "json_object"}, **kwargs)
         except Exception as exc:
