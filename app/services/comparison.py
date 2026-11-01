@@ -63,10 +63,22 @@ def build_comparison(traditional: MethodResult, vlm: MethodResult) -> Comparison
     ]
     if vlm.status == "error":
         summary = "多模态模型当前不可用，本次对比仅完成了传统方案。配置 API Key 后应重新执行同一张图片的对照。"
+    elif not trad_names and not vlm_names:
+        summary = "两种方案都没有识别出明确食物，应先检查图片质量和支持范围，而不是直接比较营养数值。"
+    elif not common:
+        summary = (
+            "两种方案在这张图片上的识别结果没有重合，说明至少一条管线存在明显偏差。"
+            "此时不应直接采用任一营养数值，应回看边界框、掩膜和模型警告定位原因。"
+        )
+    elif jaccard < 0.5:
+        summary = (
+            "两种方案只识别出少量共同食物，结果差异较大。传统方案更便于复核定位，"
+            "大模型可能补充了未知菜品，但其新增营养数值仍需人工确认。"
+        )
     else:
         summary = (
-            "同一图片上，两种方案识别结果高度重合时，可优先采用传统方案的计算与定位；"
-            "出现混合菜、未知菜品或复杂背景时，大模型的语义理解更有优势，但营养数值仍需谨慎核验。"
+            "两种方案的主要识别结果较为一致，可以优先参考传统方案的可追溯定位与计算，"
+            "并利用大模型补充自然语言解释；营养数值仍应视为估算。"
         )
     return ComparisonReport(
         rows=rows,

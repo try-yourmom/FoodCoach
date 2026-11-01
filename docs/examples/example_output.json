@@ -1,15 +1,5 @@
 {
-  "input": {
-    "image": "data/samples/healthy_bowl_unsplash.jpg",
-    "profile": {
-      "height_cm": 170.0,
-      "weight_kg": 65.0,
-      "body_fat_pct": null,
-      "goal": "fat_loss",
-      "context": "post_workout",
-      "plate_diameter_cm": 26.0
-    }
-  },
+  "request_id": "7b859f779d5c451eb5339953b1271f50",
   "traditional": {
     "method": "traditional",
     "status": "ok",
@@ -92,7 +82,7 @@
     "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
     "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
     "warnings": [],
-    "duration_ms": 6770,
+    "duration_ms": 11358,
     "overlay_image_base64": null,
     "metadata": {
       "target": {
@@ -113,33 +103,218 @@
   },
   "vlm": {
     "method": "vlm",
-    "status": "error",
-    "foods": [],
+    "status": "degraded",
+    "foods": [
+      {
+        "name": "鸡蛋",
+        "confidence": 0.98,
+        "bbox": null,
+        "mask_area_ratio": null,
+        "estimated_grams": [
+          100.0,
+          110.0
+        ],
+        "nutrition": {
+          "calories": 155,
+          "protein_g": 13.0,
+          "carbs_g": 1.0,
+          "fat_g": 11.0,
+          "note": "盘中可见两个水煮蛋（溏心），按中等大小鸡蛋估算。"
+        },
+        "verdict": {
+          "calorie_status": "不足",
+          "protein_status": "偏少",
+          "carb_ratio": "适中",
+          "summary": "鸡蛋约提供 155 kcal、13 g 蛋白质；整餐判断见上方结论。"
+        },
+        "source_id": "egg"
+      },
+      {
+        "name": "牛油果",
+        "confidence": 0.95,
+        "bbox": null,
+        "mask_area_ratio": null,
+        "estimated_grams": [
+          80.0,
+          100.0
+        ],
+        "nutrition": {
+          "calories": 130,
+          "protein_g": 2.0,
+          "carbs_g": 7.0,
+          "fat_g": 12.0,
+          "note": "盘内有一片铺有配料的牛油果，旁边桌上还有半个带核的牛油果，此处仅计算餐盘内的部分。"
+        },
+        "verdict": {
+          "calorie_status": "不足",
+          "protein_status": "偏少",
+          "carb_ratio": "适中",
+          "summary": "牛油果约提供 130 kcal、2 g 蛋白质；整餐判断见上方结论。"
+        },
+        "source_id": null
+      },
+      {
+        "name": "番茄",
+        "confidence": 0.99,
+        "bbox": null,
+        "mask_area_ratio": null,
+        "estimated_grams": [
+          100.0,
+          120.0
+        ],
+        "nutrition": {
+          "calories": 20,
+          "protein_g": 1.0,
+          "carbs_g": 4.0,
+          "fat_g": 0.0,
+          "note": "包含一个完整的圣女果和几个切开的块状番茄。"
+        },
+        "verdict": {
+          "calorie_status": "不足",
+          "protein_status": "偏少",
+          "carb_ratio": "偏高",
+          "summary": "番茄约提供 20 kcal、1 g 蛋白质；整餐判断见上方结论。"
+        },
+        "source_id": "tomato"
+      },
+      {
+        "name": "绿叶蔬菜沙拉",
+        "confidence": 0.9,
+        "bbox": null,
+        "mask_area_ratio": null,
+        "estimated_grams": [
+          100.0,
+          150.0
+        ],
+        "nutrition": {
+          "calories": 35,
+          "protein_g": 3.0,
+          "carbs_g": 5.0,
+          "fat_g": 1.0,
+          "note": "主要为芝麻菜或类似的深绿色叶菜，表面撒有少量白色颗粒（疑似奶酪碎）。"
+        },
+        "verdict": {
+          "calorie_status": "不足",
+          "protein_status": "偏少",
+          "carb_ratio": "适中",
+          "summary": "绿叶蔬菜沙拉约提供 35 kcal、3 g 蛋白质；整餐判断见上方结论。"
+        },
+        "source_id": null
+      },
+      {
+        "name": "西葫芦面 (Zoodles)",
+        "confidence": 0.85,
+        "bbox": null,
+        "mask_area_ratio": null,
+        "estimated_grams": [
+          100.0,
+          120.0
+        ],
+        "nutrition": {
+          "calories": 20,
+          "protein_g": 1.0,
+          "carbs_g": 4.0,
+          "fat_g": 0.0,
+          "note": "绿色的螺旋状蔬菜丝，作为主食替代品，非传统谷物碳水。"
+        },
+        "verdict": {
+          "calorie_status": "不足",
+          "protein_status": "偏少",
+          "carb_ratio": "偏高",
+          "summary": "西葫芦面 (Zoodles)约提供 20 kcal、1 g 蛋白质；整餐判断见上方结论。"
+        },
+        "source_id": null
+      },
+      {
+        "name": "水萝卜切片",
+        "confidence": 0.9,
+        "bbox": null,
+        "mask_area_ratio": null,
+        "estimated_grams": [
+          50.0,
+          70.0
+        ],
+        "nutrition": {
+          "calories": 10,
+          "protein_g": 0.0,
+          "carbs_g": 2.0,
+          "fat_g": 0.0,
+          "note": "粉白相间的圆形薄片，属于低热量根茎类蔬菜。"
+        },
+        "verdict": {
+          "calorie_status": "不足",
+          "protein_status": "偏少",
+          "carb_ratio": "偏高",
+          "summary": "水萝卜切片约提供 10 kcal、0 g 蛋白质；整餐判断见上方结论。"
+        },
+        "source_id": null
+      },
+      {
+        "name": "胡萝卜丝/坚果碎",
+        "confidence": 0.7,
+        "bbox": null,
+        "mask_area_ratio": null,
+        "estimated_grams": [
+          15.0,
+          25.0
+        ],
+        "nutrition": {
+          "calories": 60,
+          "protein_g": 2.0,
+          "carbs_g": 3.0,
+          "fat_g": 5.0,
+          "note": "位于牛油果上的橙色配料，可能是胡萝卜丝混合了葵花籽等油脂种子，热量密度较高。"
+        },
+        "verdict": {
+          "calorie_status": "不足",
+          "protein_status": "偏少",
+          "carb_ratio": "适中",
+          "summary": "胡萝卜丝/坚果碎约提供 60 kcal、2 g 蛋白质；整餐判断见上方结论。"
+        },
+        "source_id": null
+      }
+    ],
     "totals": {
-      "calories": 0,
-      "protein_g": 0.0,
-      "carbs_g": 0.0,
-      "fat_g": 0.0
+      "calories": 430,
+      "protein_g": 22.0,
+      "carbs_g": 26.0,
+      "fat_g": 29.0
     },
     "verdict": {
-      "calorie_status": "无法判断",
-      "protein_status": "无法判断",
-      "carb_ratio": "无法判断",
-      "summary": "未配置多模态 API Key。请设置 DASHSCOPE_API_KEY 后重试；当前不会伪造大模型结果。"
+      "calorie_status": "不足",
+      "protein_status": "不足",
+      "carb_ratio": "适中",
+      "summary": "本餐估算约 430 kcal、蛋白质 22 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比适中。热量主要来自鸡蛋（约 155 kcal）。"
     },
     "advice": [
-      "配置 API Key 后重新评估；也可以先查看左侧传统方案结果。"
+      "练后建议：由于本餐缺乏高GI碳水化合物来快速恢复糖原，建议在餐后增加一根香蕉或一小份红薯。",
+      "蛋白质优化：目前的蛋白质来源主要是鸡蛋（约13g），对于减脂期练后修复略显不足，下一餐可增加一块鸡胸肉或一杯乳清蛋白粉以补足缺口。",
+      "脂肪控制：牛油果和种子类配料提供了较多脂肪，虽然健康但在减脂期需注意总量，建议将牛油果分量减半，腾出热量空间给优质蛋白。"
     ],
-    "long_term_note": "单顿不决定结果；模型不可用时不应编造营养结论。",
+    "long_term_note": "这一餐是非常典型的低碳水、高纤维饮食模式。虽然在减脂初期能迅速降低热量摄入并改善饱腹感，但长期来看，如果训练强度较大且完全忽视碳水补充，可能会导致肌肉流失或代谢适应。请记住，单餐的选择只是拼图的一角，长期的总能量平衡才是关键。",
     "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
     "warnings": [
-      "未配置多模态 API Key。请设置 DASHSCOPE_API_KEY 后重试；当前不会伪造大模型结果。"
+      "图片中的‘西葫芦面’并非系统支持列表中的标准食材，其营养成分与米饭差异巨大，已按实际观察到的蔬菜属性进行评估。",
+      "牛油果顶部的橙色混合物成分复杂，可能含有额外的油脂（如坚果油或种子），热量估算存在一定波动范围。"
     ],
-    "duration_ms": 12,
+    "duration_ms": 62388,
     "overlay_image_base64": null,
     "metadata": {
-      "pipeline": "Qwen-VL structured JSON",
-      "configured": false
+      "target": {
+        "daily_calories": 1625,
+        "meal_calories": 623,
+        "meal_protein_g": 44.8,
+        "estimate_only": true
+      },
+      "calorie_ratio": 0.69,
+      "protein_ratio": 0.491,
+      "carb_calorie_share": 0.242,
+      "pipeline": "Qwen-VL structured JSON -> Pydantic validation -> rules",
+      "provider": "DashScope OpenAI-compatible",
+      "model": "qwen3.8-omni-flash",
+      "attempts": 1,
+      "prompt_version": "plate-lens-v1",
+      "cache_hit": false
     }
   },
   "comparison": {
@@ -147,7 +322,7 @@
       {
         "dimension": "识别食物",
         "traditional": "青椒",
-        "vlm": "不可用",
+        "vlm": "水萝卜切片、牛油果、番茄、绿叶蔬菜沙拉、胡萝卜丝/坚果碎、西葫芦面 (Zoodles)、鸡蛋",
         "conclusion": "名称重合 0 项，集合重合度约 0%。"
       },
       {
@@ -159,8 +334,8 @@
       {
         "dimension": "营养估算",
         "traditional": "约 6 kcal。",
-        "vlm": "约 0 kcal。",
-        "conclusion": "热量差约 6 kcal（100%），两者都只是估算。"
+        "vlm": "约 430 kcal。",
+        "conclusion": "热量差约 424 kcal（7067%），两者都只是估算。"
       },
       {
         "dimension": "情境反馈",
@@ -170,8 +345,8 @@
       },
       {
         "dimension": "速度",
-        "traditional": "6.77 秒。",
-        "vlm": "0.01 秒。",
+        "traditional": "11.36 秒。",
+        "vlm": "62.39 秒。",
         "conclusion": "传统模型通常本地推理更快，首次加载除外。"
       },
       {
@@ -183,11 +358,19 @@
       {
         "dimension": "可解释性",
         "traditional": "平均检测置信度 0.64；每个数值可追溯到食物表和公式。",
-        "vlm": "模型自报平均置信度 0.00；置信度不能等同于事实校准。",
+        "vlm": "模型自报平均置信度 0.90；置信度不能等同于事实校准。",
         "conclusion": "传统管线更容易定位错误来源。"
       }
     ],
-    "summary": "多模态模型当前不可用，本次对比仅完成了传统方案。配置 API Key 后应重新执行同一张图片的对照。",
+    "summary": "两种方案在这张图片上的识别结果没有重合，说明至少一条管线存在明显偏差。此时不应直接采用任一营养数值，应回看边界框、掩膜和模型警告定位原因。",
     "recommended_use": "稳定菜单、需要可解释定位和批量处理时用传统方案；开放菜品、需要自然语言解释时用多模态大模型；最终产品可让传统模型负责数值、大模型负责情境反馈。"
+  },
+  "profile": {
+    "height_cm": 170.0,
+    "weight_kg": 65.0,
+    "body_fat_pct": 20.0,
+    "goal": "fat_loss",
+    "context": "post_workout",
+    "plate_diameter_cm": 26.0
   }
 }
