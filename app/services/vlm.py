@@ -103,6 +103,9 @@ class VLMService:
         if "omni" in settings.vlm_model.lower():
             # Omni models distinguish output modalities; PlateLens only needs text.
             kwargs["modalities"] = ["text"]
+            # The model's default thinking mode is unnecessarily slow for a
+            # bounded JSON extraction task.
+            kwargs["extra_body"] = {"enable_thinking": False}
         try:
             return client.chat.completions.create(response_format={"type": "json_object"}, **kwargs)
         except Exception as exc:
