@@ -13,6 +13,7 @@ class FoodRecord:
     food_id: str
     name: str
     prompt_en: str
+    prompt_variants: tuple[str, ...]
     aliases: tuple[str, ...]
     calories_per_100g: float
     protein_g_per_100g: float
@@ -43,6 +44,7 @@ def load_catalog(path: Path | None = None) -> tuple[FoodRecord, ...]:
                 food_id=row["food_id"].strip(),
                 name=row["name"].strip(),
                 prompt_en=row["prompt_en"].strip(),
+                prompt_variants=_split_aliases(row["prompt_variants"]),
                 aliases=_split_aliases(row["aliases"]),
                 calories_per_100g=float(row["calories_per_100g"]),
                 protein_g_per_100g=float(row["protein_g_per_100g"]),
@@ -65,20 +67,38 @@ def catalog_by_id() -> dict[str, FoodRecord]:
 
 @lru_cache(maxsize=1)
 def catalog_by_prompt() -> dict[str, FoodRecord]:
-    return {record.prompt_en.lower(): record for record in load_catalog()}
+    mapping: dict[str, FoodRecord] = {}
+    for record in load_catalog():
+        for prompt in (record.prompt_en, *record.prompt_variants):
+            mapping[prompt.lower()] = record
+    return mapping
 
 
 def find_food(name: str) -> FoodRecord | None:
     needle = name.strip().lower()
     for record in load_catalog():
-        candidates = (record.name, record.prompt_en, record.food_id, *record.aliases)
+        candidates = (
+            record.name,
+            record.prompt_en,
+            record.food_id,
+            *record.prompt_variants,
+            *record.aliases,
+        )
         if any(needle == candidate.strip().lower() for candidate in candidates):
             return record
     return None
 
 
 def supported_prompts() -> list[str]:
-    return [record.prompt_en for record in load_catalog()]
+    prompts: list[str] = []
+    seen: set[str] = set()
+    for record in load_catalog():
+        for prompt in (record.prompt_en, *record.prompt_variants):
+            normalized = prompt.strip().lower()
+            if normalized and normalized not in seen:
+                prompts.append(prompt.strip())
+                seen.add(normalized)
+    return prompts
 
 
 def catalog_payload() -> list[dict]:
@@ -87,6 +107,7 @@ def catalog_payload() -> list[dict]:
             "id": record.food_id,
             "name": record.name,
             "prompt": record.prompt_en,
+            "prompt_variants": list(record.prompt_variants),
             "aliases": list(record.aliases),
             "nutrition_per_100g": {
                 "calories": record.calories_per_100g,

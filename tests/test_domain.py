@@ -1,6 +1,6 @@
 import pytest
 
-from app.catalog import load_catalog
+from app.catalog import catalog_by_prompt, load_catalog, supported_prompts
 from app.nutrition import calculate_nutrition, total_nutrition
 from app.partial_helpers import build_food
 from app.rule_engine import estimate_targets, evaluate_meal
@@ -9,6 +9,14 @@ from app.schemas import FoodItem, Goal, MealContext, UserProfile
 
 def test_catalog_has_expected_size():
     assert 15 <= len(load_catalog()) <= 20
+
+
+def test_prompt_variants_map_back_to_canonical_foods():
+    prompts = supported_prompts()
+    mapping = catalog_by_prompt()
+    assert len(prompts) >= 40
+    assert all(prompt.lower() in mapping for prompt in prompts)
+    assert len({record.food_id for record in load_catalog()}) == len(load_catalog())
 
 
 def test_nutrition_scales_per_100g():

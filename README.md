@@ -215,6 +215,18 @@ scripts/                  模型下载与启动脚本
 tests/                    自动化测试
 ```
 
+## 首轮批量评测
+
+在用户提供的 11 张图片上完成了传统方案首轮基线：
+
+- 学校混菜 6 张：5 张有检测结果，平均 2.5 项
+- YOLO 适配图 5 张：5 张有检测结果，平均 3.8 项
+- 首张图片包含模型加载，耗时约 13 秒；预热后单图约 0.1～0.4 秒
+- 当前不能计算 mAP，因为还没有人工标注边界框
+
+详细结果见 [traditional_eval/summary.md](reports/traditional_eval/summary.md) 和
+[threshold_analysis.md](reports/traditional_eval/threshold_analysis.md)。
+
 ## 已知限制
 
 1. YOLO-World 对中餐混合菜和遮挡场景可能漏检或重复检测，本项目的置信度不等于准确率。

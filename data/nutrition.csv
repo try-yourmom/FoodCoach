@@ -1,21 +1,21 @@
-food_id,name,prompt_en,aliases,calories_per_100g,protein_g_per_100g,carbs_g_per_100g,fat_g_per_100g,default_grams,min_grams,max_grams,density_g_per_cm3,thickness_cm
-chicken_breast,鸡胸肉,chicken breast,鸡肉|chicken,165,31.0,0.0,3.6,120,50,220,0.75,1.8
-egg,鸡蛋,egg,水煮蛋|fried egg,155,13.0,1.1,11.0,55,35,140,0.95,2.0
-rice,米饭,cooked white rice,白米饭|rice,130,2.7,28.0,0.3,180,70,380,0.85,2.2
-broccoli,西兰花,broccoli,绿花菜|broccoli,35,2.4,7.2,0.4,100,40,260,0.35,3.0
-beef,牛肉,beef,瘦牛肉|steak,250,26.0,0.0,15.0,120,50,240,0.80,1.8
-salmon,三文鱼,salmon,鲑鱼|salmon fillet,206,22.0,0.0,13.0,120,50,240,0.85,1.8
-oats,燕麦,oats,燕麦片|oatmeal,379,13.2,67.7,6.5,60,25,160,0.45,2.0
-banana,香蕉,banana,banana,89,1.1,22.8,0.3,100,45,220,0.65,3.0
-milk,牛奶,milk,纯牛奶|milk,61,3.2,4.8,3.3,250,100,500,1.00,3.0
-tofu,豆腐,tofu,嫩豆腐|firm tofu,76,8.1,1.9,4.8,120,50,260,0.90,2.5
-sweet_potato,红薯,sweet potato,地瓜|烤红薯,86,1.6,20.1,0.1,160,70,380,0.80,2.0
-lettuce,生菜,lettuce,叶用莴苣|romaine,15,1.4,2.9,0.2,80,30,220,0.20,3.0
-tomato,番茄,tomato,西红柿|tomato,18,0.9,3.9,0.2,100,35,260,0.75,2.0
-shrimp,虾,shrimp,大虾|prawn,99,24.0,0.2,0.3,100,40,220,0.65,2.0
-whole_wheat_bread,全麦面包,whole wheat bread,全麦吐司|bread,247,13.0,41.0,3.4,70,25,180,0.35,2.0
-potato,土豆,potato,马铃薯|mashed potato,87,2.0,20.0,0.1,150,60,360,0.80,2.2
-corn,玉米,corn,甜玉米|玉米粒,96,3.4,21.0,1.5,120,45,320,0.65,3.0
-yogurt,酸奶,plain yogurt,无糖酸奶|yogurt,61,3.5,4.7,3.3,150,70,320,1.00,3.0
-pork,猪肉,pork,瘦猪肉|pork loin,242,27.0,0.0,14.0,120,50,240,0.80,1.8
-green_pepper,青椒,green bell pepper,青椒|bell pepper,20,0.9,4.6,0.2,80,30,220,0.35,2.5
+﻿food_id,name,prompt_en,prompt_variants,aliases,calories_per_100g,protein_g_per_100g,carbs_g_per_100g,fat_g_per_100g,default_grams,min_grams,max_grams,density_g_per_cm3,thickness_cm
+chicken_breast,鸡胸肉,chicken breast,grilled chicken|chicken|chicken piece,鸡肉|chicken,165,31.0,0.0,3.6,120,50,220,0.75,1.8
+egg,鸡蛋,egg,boiled egg|fried egg,水煮蛋|fried egg,155,13.0,1.1,11.0,55,35,140,0.95,2.0
+rice,米饭,cooked white rice,rice|steamed rice,白米饭|rice,130,2.7,28.0,0.3,180,70,380,0.85,2.2
+broccoli,西兰花,broccoli,steamed broccoli|broccoli floret,绿花菜|broccoli,35,2.4,7.2,0.4,100,40,260,0.35,3.0
+beef,牛肉,beef,beef|steak|beef slice,瘦牛肉|steak,250,26.0,0.0,15.0,120,50,240,0.80,1.8
+salmon,三文鱼,salmon,grilled salmon|salmon fillet,鲑鱼|salmon fillet,206,22.0,0.0,13.0,120,50,240,0.85,1.8
+oats,燕麦,oats,oatmeal|porridge oats,燕麦片|oatmeal,379,13.2,67.7,6.5,60,25,160,0.45,2.0
+banana,香蕉,banana,banana slice|banana,banana,89,1.1,22.8,0.3,100,45,220,0.65,3.0
+milk,牛奶,milk,glass of milk|milk,纯牛奶|milk,61,3.2,4.8,3.3,250,100,500,1.00,3.0
+tofu,豆腐,tofu,bean curd|tofu cube,嫩豆腐|firm tofu,76,8.1,1.9,4.8,120,50,260,0.90,2.5
+sweet_potato,红薯,sweet potato,sweet potato|baked sweet potato,地瓜|烤红薯,86,1.6,20.1,0.1,160,70,380,0.80,2.0
+lettuce,生菜,lettuce,salad|leafy greens|romaine lettuce,叶用莴苣|romaine,15,1.4,2.9,0.2,80,30,220,0.20,3.0
+tomato,番茄,tomato,sliced tomato|cherry tomato,西红柿|tomato,18,0.9,3.9,0.2,100,35,260,0.75,2.0
+shrimp,虾,shrimp,prawn|cooked shrimp,大虾|prawn,99,24.0,0.2,0.3,100,40,220,0.65,2.0
+whole_wheat_bread,全麦面包,whole wheat bread,bread|toast|whole grain bread,全麦吐司|bread,247,13.0,41.0,3.4,70,25,180,0.35,2.0
+potato,土豆,potato,mashed potato|boiled potato,马铃薯|mashed potato,87,2.0,20.0,0.1,150,60,360,0.80,2.2
+corn,玉米,corn,corn kernels|sweet corn,甜玉米|玉米粒,96,3.4,21.0,1.5,120,45,320,0.65,3.0
+yogurt,酸奶,plain yogurt,yogurt|greek yogurt,无糖酸奶|yogurt,61,3.5,4.7,3.3,150,70,320,1.00,3.0
+pork,猪肉,pork,pork|pork slice|pork loin,瘦猪肉|pork loin,242,27.0,0.0,14.0,120,50,240,0.80,1.8
+green_pepper,青椒,green bell pepper,green pepper|bell pepper,青椒|bell pepper,20,0.9,4.6,0.2,80,30,220,0.35,2.5

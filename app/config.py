@@ -32,7 +32,7 @@ class Settings:
             os.getenv("SAM_MODEL", "models/mobile_sam.pt")
         )
         self.device = os.getenv("DEVICE", "auto").strip().lower()
-        self.detection_confidence = float(os.getenv("DETECTION_CONFIDENCE", "0.30"))
+        self.detection_confidence = float(os.getenv("DETECTION_CONFIDENCE", "0.20"))
         self.detection_image_size = int(os.getenv("DETECTION_IMAGE_SIZE", "640"))
 
         self.vlm_api_key = (

@@ -1,0 +1,1504 @@
+[
+  {
+    "group": "school_mixed",
+    "image": "餐01.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "青椒",
+          "confidence": 0.441,
+          "bbox": [
+            710.0,
+            431.7,
+            122.5,
+            163.6
+          ],
+          "mask_area_ratio": 0.0056,
+          "estimated_grams": [
+            5.2,
+            9.8
+          ],
+          "nutrition": {
+            "calories": 2,
+            "protein_g": 0.1,
+            "carbs_g": 0.3,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "适中",
+            "summary": "青椒约提供 2 kcal、0.1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        },
+        {
+          "name": "西兰花",
+          "confidence": 0.263,
+          "bbox": [
+            720.2,
+            1092.2,
+            448.9,
+            387.4
+          ],
+          "mask_area_ratio": 0.0483,
+          "estimated_grams": [
+            29.0,
+            53.8
+          ],
+          "nutrition": {
+            "calories": 14,
+            "protein_g": 1.0,
+            "carbs_g": 3.0,
+            "fat_g": 0.2,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "西兰花约提供 14 kcal、1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "broccoli"
+        },
+        {
+          "name": "青椒",
+          "confidence": 0.243,
+          "bbox": [
+            735.0,
+            516.7,
+            284.5,
+            137.5
+          ],
+          "mask_area_ratio": 0.0052,
+          "estimated_grams": [
+            5.2,
+            9.8
+          ],
+          "nutrition": {
+            "calories": 2,
+            "protein_g": 0.1,
+            "carbs_g": 0.3,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "适中",
+            "summary": "青椒约提供 2 kcal、0.1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        }
+      ],
+      "totals": {
+        "calories": 18,
+        "protein_g": 1.2,
+        "carbs_g": 3.6,
+        "fat_g": 0.2
+      },
+      "verdict": {
+        "calorie_status": "不足",
+        "protein_status": "不足",
+        "carb_ratio": "偏高",
+        "summary": "本餐估算约 18 kcal、蛋白质 1.2 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比偏高。热量主要来自西兰花（约 14 kcal）。"
+      },
+      "advice": [
+        "下一顿增加一掌心大小的瘦肉、鱼虾、鸡蛋或豆腐。",
+        "同时保持饮水，不需要用高糖饮料补充能量。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 13097,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 0.029,
+        "protein_ratio": 0.027,
+        "carb_calorie_share": 0.8,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 3,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "school_mixed",
+    "image": "餐02.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "青椒",
+          "confidence": 0.79,
+          "bbox": [
+            1091.9,
+            658.1,
+            134.7,
+            146.1
+          ],
+          "mask_area_ratio": 0.007,
+          "estimated_grams": [
+            5.2,
+            9.8
+          ],
+          "nutrition": {
+            "calories": 2,
+            "protein_g": 0.1,
+            "carbs_g": 0.3,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "适中",
+            "summary": "青椒约提供 2 kcal、0.1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        },
+        {
+          "name": "青椒",
+          "confidence": 0.766,
+          "bbox": [
+            781.5,
+            246.3,
+            198.5,
+            260.0
+          ],
+          "mask_area_ratio": 0.0161,
+          "estimated_grams": [
+            8.1,
+            15.0
+          ],
+          "nutrition": {
+            "calories": 2,
+            "protein_g": 0.1,
+            "carbs_g": 0.5,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "青椒约提供 2 kcal、0.1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        }
+      ],
+      "totals": {
+        "calories": 4,
+        "protein_g": 0.2,
+        "carbs_g": 0.8,
+        "fat_g": 0.0
+      },
+      "verdict": {
+        "calorie_status": "不足",
+        "protein_status": "不足",
+        "carb_ratio": "偏高",
+        "summary": "本餐估算约 4 kcal、蛋白质 0.2 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比偏高。热量主要来自青椒（约 2 kcal）。"
+      },
+      "advice": [
+        "下一顿增加一掌心大小的瘦肉、鱼虾、鸡蛋或豆腐。",
+        "同时保持饮水，不需要用高糖饮料补充能量。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 125,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 0.006,
+        "protein_ratio": 0.004,
+        "carb_calorie_share": 0.8,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 2,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "school_mixed",
+    "image": "餐03.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "土豆",
+          "confidence": 0.329,
+          "bbox": [
+            135.4,
+            813.6,
+            566.6,
+            810.1
+          ],
+          "mask_area_ratio": 0.1369,
+          "estimated_grams": [
+            137.7,
+            255.8
+          ],
+          "nutrition": {
+            "calories": 171,
+            "protein_g": 3.9,
+            "carbs_g": 39.4,
+            "fat_g": 0.2,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "超标",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "土豆约提供 171 kcal、3.9 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "potato"
+        },
+        {
+          "name": "鸡蛋",
+          "confidence": 0.301,
+          "bbox": [
+            135.1,
+            814.9,
+            564.8,
+            808.1
+          ],
+          "mask_area_ratio": 0.1369,
+          "estimated_grams": [
+            147.0,
+            273.0
+          ],
+          "nutrition": {
+            "calories": 326,
+            "protein_g": 27.3,
+            "carbs_g": 2.3,
+            "fat_g": 23.1,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "超标",
+            "protein_status": "充足",
+            "carb_ratio": "适中",
+            "summary": "鸡蛋约提供 326 kcal、27.3 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "egg"
+        },
+        {
+          "name": "米饭",
+          "confidence": 0.253,
+          "bbox": [
+            135.8,
+            812.2,
+            564.8,
+            812.8
+          ],
+          "mask_area_ratio": 0.1369,
+          "estimated_grams": [
+            146.3,
+            271.8
+          ],
+          "nutrition": {
+            "calories": 272,
+            "protein_g": 5.6,
+            "carbs_g": 58.5,
+            "fat_g": 0.6,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "超标",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "米饭约提供 272 kcal、5.6 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "rice"
+        }
+      ],
+      "totals": {
+        "calories": 769,
+        "protein_g": 36.8,
+        "carbs_g": 100.2,
+        "fat_g": 23.9
+      },
+      "verdict": {
+        "calorie_status": "超标",
+        "protein_status": "接近目标",
+        "carb_ratio": "适中",
+        "summary": "本餐估算约 769 kcal、蛋白质 36.8 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量超标，蛋白质接近目标，碳水占比适中。热量主要来自鸡蛋（约 326 kcal）。"
+      },
+      "advice": [
+        "下一顿主食减半，优先补充蛋白质和蔬菜，不需要通过节食补偿这一餐。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 218,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 1.234,
+        "protein_ratio": 0.821,
+        "carb_calorie_share": 0.521,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 3,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "school_mixed",
+    "image": "餐04.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "米饭",
+          "confidence": 0.438,
+          "bbox": [
+            34.3,
+            777.4,
+            631.7,
+            847.7
+          ],
+          "mask_area_ratio": 0.1667,
+          "estimated_grams": [
+            178.2,
+            331.0
+          ],
+          "nutrition": {
+            "calories": 331,
+            "protein_g": 6.9,
+            "carbs_g": 71.3,
+            "fat_g": 0.8,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "超标",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "米饭约提供 331 kcal、6.9 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "rice"
+        },
+        {
+          "name": "西兰花",
+          "confidence": 0.388,
+          "bbox": [
+            386.0,
+            71.3,
+            245.5,
+            281.2
+          ],
+          "mask_area_ratio": 0.0174,
+          "estimated_grams": [
+            10.4,
+            19.4
+          ],
+          "nutrition": {
+            "calories": 5,
+            "protein_g": 0.4,
+            "carbs_g": 1.1,
+            "fat_g": 0.1,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "超标",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "西兰花约提供 5 kcal、0.4 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "broccoli"
+        },
+        {
+          "name": "燕麦",
+          "confidence": 0.301,
+          "bbox": [
+            33.8,
+            781.5,
+            632.1,
+            843.2
+          ],
+          "mask_area_ratio": 0.1667,
+          "estimated_grams": [
+            85.8,
+            159.3
+          ],
+          "nutrition": {
+            "calories": 465,
+            "protein_g": 16.2,
+            "carbs_g": 83.0,
+            "fat_g": 8.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "超标",
+            "protein_status": "充足",
+            "carb_ratio": "偏高",
+            "summary": "燕麦约提供 465 kcal、16.2 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "oats"
+        },
+        {
+          "name": "西兰花",
+          "confidence": 0.278,
+          "bbox": [
+            659.1,
+            833.8,
+            198.2,
+            277.3
+          ],
+          "mask_area_ratio": 0.0137,
+          "estimated_grams": [
+            8.2,
+            15.2
+          ],
+          "nutrition": {
+            "calories": 4,
+            "protein_g": 0.3,
+            "carbs_g": 0.8,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "超标",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "西兰花约提供 4 kcal、0.3 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "broccoli"
+        },
+        {
+          "name": "青椒",
+          "confidence": 0.268,
+          "bbox": [
+            660.8,
+            833.9,
+            196.2,
+            278.8
+          ],
+          "mask_area_ratio": 0.0137,
+          "estimated_grams": [
+            6.8,
+            12.7
+          ],
+          "nutrition": {
+            "calories": 2,
+            "protein_g": 0.1,
+            "carbs_g": 0.5,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "超标",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "青椒约提供 2 kcal、0.1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        },
+        {
+          "name": "生菜",
+          "confidence": 0.211,
+          "bbox": [
+            686.0,
+            101.6,
+            527.3,
+            478.3
+          ],
+          "mask_area_ratio": 0.0729,
+          "estimated_grams": [
+            25.0,
+            46.5
+          ],
+          "nutrition": {
+            "calories": 5,
+            "protein_g": 0.5,
+            "carbs_g": 1.0,
+            "fat_g": 0.1,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "超标",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "生菜约提供 5 kcal、0.5 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "lettuce"
+        }
+      ],
+      "totals": {
+        "calories": 812,
+        "protein_g": 24.4,
+        "carbs_g": 157.7,
+        "fat_g": 9.0
+      },
+      "verdict": {
+        "calorie_status": "超标",
+        "protein_status": "不足",
+        "carb_ratio": "偏高",
+        "summary": "本餐估算约 812 kcal、蛋白质 24.4 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量超标，蛋白质不足，碳水占比偏高。热量主要来自燕麦（约 465 kcal）。"
+      },
+      "advice": [
+        "下一顿主食减半，优先补充蛋白质和蔬菜，不需要通过节食补偿这一餐。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 291,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 1.303,
+        "protein_ratio": 0.545,
+        "carb_calorie_share": 0.777,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 6,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "school_mixed",
+    "image": "餐05.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "米饭",
+          "confidence": 0.485,
+          "bbox": [
+            164.4,
+            666.1,
+            428.8,
+            558.6
+          ],
+          "mask_area_ratio": 0.0805,
+          "estimated_grams": [
+            86.1,
+            159.9
+          ],
+          "nutrition": {
+            "calories": 160,
+            "protein_g": 3.3,
+            "carbs_g": 34.4,
+            "fat_g": 0.4,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "米饭约提供 160 kcal、3.3 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "rice"
+        }
+      ],
+      "totals": {
+        "calories": 160,
+        "protein_g": 3.3,
+        "carbs_g": 34.4,
+        "fat_g": 0.4
+      },
+      "verdict": {
+        "calorie_status": "不足",
+        "protein_status": "不足",
+        "carb_ratio": "偏高",
+        "summary": "本餐估算约 160 kcal、蛋白质 3.3 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比偏高。热量主要来自米饭（约 160 kcal）。"
+      },
+      "advice": [
+        "下一顿增加一掌心大小的瘦肉、鱼虾、鸡蛋或豆腐。",
+        "同时保持饮水，不需要用高糖饮料补充能量。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 129,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 0.257,
+        "protein_ratio": 0.074,
+        "carb_calorie_share": 0.86,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 1,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "yolo_friendly",
+    "image": "餐06.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "生菜",
+          "confidence": 0.522,
+          "bbox": [
+            41.5,
+            289.1,
+            1156.2,
+            1059.9
+          ],
+          "mask_area_ratio": 0.3846,
+          "estimated_grams": [
+            131.9,
+            245.0
+          ],
+          "nutrition": {
+            "calories": 28,
+            "protein_g": 2.6,
+            "carbs_g": 5.5,
+            "fat_g": 0.4,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "生菜约提供 28 kcal、2.6 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "lettuce"
+        },
+        {
+          "name": "西兰花",
+          "confidence": 0.251,
+          "bbox": [
+            54.9,
+            548.5,
+            251.2,
+            176.6
+          ],
+          "mask_area_ratio": 0.0154,
+          "estimated_grams": [
+            9.3,
+            17.2
+          ],
+          "nutrition": {
+            "calories": 5,
+            "protein_g": 0.3,
+            "carbs_g": 1.0,
+            "fat_g": 0.1,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "西兰花约提供 5 kcal、0.3 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "broccoli"
+        }
+      ],
+      "totals": {
+        "calories": 33,
+        "protein_g": 2.9,
+        "carbs_g": 6.5,
+        "fat_g": 0.5
+      },
+      "verdict": {
+        "calorie_status": "不足",
+        "protein_status": "不足",
+        "carb_ratio": "偏高",
+        "summary": "本餐估算约 33 kcal、蛋白质 2.9 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比偏高。热量主要来自生菜（约 28 kcal）。"
+      },
+      "advice": [
+        "下一顿增加一掌心大小的瘦肉、鱼虾、鸡蛋或豆腐。",
+        "同时保持饮水，不需要用高糖饮料补充能量。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 201,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 0.053,
+        "protein_ratio": 0.065,
+        "carb_calorie_share": 0.788,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 2,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "yolo_friendly",
+    "image": "餐07.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "青椒",
+          "confidence": 0.795,
+          "bbox": [
+            662.9,
+            696.7,
+            340.4,
+            328.3
+          ],
+          "mask_area_ratio": 0.0293,
+          "estimated_grams": [
+            14.7,
+            27.3
+          ],
+          "nutrition": {
+            "calories": 4,
+            "protein_g": 0.2,
+            "carbs_g": 1.0,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "青椒约提供 4 kcal、0.2 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        },
+        {
+          "name": "青椒",
+          "confidence": 0.578,
+          "bbox": [
+            728.9,
+            569.8,
+            468.3,
+            410.5
+          ],
+          "mask_area_ratio": 0.0407,
+          "estimated_grams": [
+            20.4,
+            37.8
+          ],
+          "nutrition": {
+            "calories": 6,
+            "protein_g": 0.3,
+            "carbs_g": 1.3,
+            "fat_g": 0.1,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "青椒约提供 6 kcal、0.3 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        }
+      ],
+      "totals": {
+        "calories": 10,
+        "protein_g": 0.5,
+        "carbs_g": 2.3,
+        "fat_g": 0.1
+      },
+      "verdict": {
+        "calorie_status": "不足",
+        "protein_status": "不足",
+        "carb_ratio": "偏高",
+        "summary": "本餐估算约 10 kcal、蛋白质 0.5 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比偏高。热量主要来自青椒（约 6 kcal）。"
+      },
+      "advice": [
+        "下一顿增加一掌心大小的瘦肉、鱼虾、鸡蛋或豆腐。",
+        "同时保持饮水，不需要用高糖饮料补充能量。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 120,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 0.016,
+        "protein_ratio": 0.011,
+        "carb_calorie_share": 0.92,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 2,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "yolo_friendly",
+    "image": "餐08.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "豆腐",
+          "confidence": 0.376,
+          "bbox": [
+            812.4,
+            207.7,
+            218.1,
+            173.9
+          ],
+          "mask_area_ratio": 0.0106,
+          "estimated_grams": [
+            13.7,
+            25.4
+          ],
+          "nutrition": {
+            "calories": 15,
+            "protein_g": 1.6,
+            "carbs_g": 0.4,
+            "fat_g": 0.9,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "适中",
+            "summary": "豆腐约提供 15 kcal、1.6 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "tofu"
+        },
+        {
+          "name": "豆腐",
+          "confidence": 0.375,
+          "bbox": [
+            676.6,
+            166.5,
+            201.5,
+            153.3
+          ],
+          "mask_area_ratio": 0.0097,
+          "estimated_grams": [
+            12.5,
+            23.1
+          ],
+          "nutrition": {
+            "calories": 14,
+            "protein_g": 1.4,
+            "carbs_g": 0.3,
+            "fat_g": 0.9,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "适中",
+            "summary": "豆腐约提供 14 kcal、1.4 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "tofu"
+        },
+        {
+          "name": "生菜",
+          "confidence": 0.332,
+          "bbox": [
+            670.0,
+            515.8,
+            486.9,
+            443.2
+          ],
+          "mask_area_ratio": 0.0656,
+          "estimated_grams": [
+            22.5,
+            41.8
+          ],
+          "nutrition": {
+            "calories": 5,
+            "protein_g": 0.4,
+            "carbs_g": 0.9,
+            "fat_g": 0.1,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "生菜约提供 5 kcal、0.4 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "lettuce"
+        },
+        {
+          "name": "生菜",
+          "confidence": 0.284,
+          "bbox": [
+            660.1,
+            513.6,
+            489.5,
+            443.6
+          ],
+          "mask_area_ratio": 0.0656,
+          "estimated_grams": [
+            22.5,
+            41.8
+          ],
+          "nutrition": {
+            "calories": 5,
+            "protein_g": 0.4,
+            "carbs_g": 0.9,
+            "fat_g": 0.1,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "生菜约提供 5 kcal、0.4 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "lettuce"
+        },
+        {
+          "name": "青椒",
+          "confidence": 0.282,
+          "bbox": [
+            778.0,
+            578.5,
+            384.6,
+            365.1
+          ],
+          "mask_area_ratio": 0.0234,
+          "estimated_grams": [
+            11.7,
+            21.7
+          ],
+          "nutrition": {
+            "calories": 3,
+            "protein_g": 0.2,
+            "carbs_g": 0.8,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "青椒约提供 3 kcal、0.2 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        }
+      ],
+      "totals": {
+        "calories": 42,
+        "protein_g": 4.0,
+        "carbs_g": 3.3,
+        "fat_g": 2.0
+      },
+      "verdict": {
+        "calorie_status": "不足",
+        "protein_status": "不足",
+        "carb_ratio": "适中",
+        "summary": "本餐估算约 42 kcal、蛋白质 4 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比适中。热量主要来自豆腐（约 15 kcal）。"
+      },
+      "advice": [
+        "下一顿增加一掌心大小的瘦肉、鱼虾、鸡蛋或豆腐。",
+        "同时保持饮水，不需要用高糖饮料补充能量。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 208,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 0.067,
+        "protein_ratio": 0.089,
+        "carb_calorie_share": 0.314,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 5,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "yolo_friendly",
+    "image": "餐09.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "青椒",
+          "confidence": 0.508,
+          "bbox": [
+            337.6,
+            733.4,
+            295.1,
+            294.0
+          ],
+          "mask_area_ratio": 0.024,
+          "estimated_grams": [
+            12.0,
+            22.3
+          ],
+          "nutrition": {
+            "calories": 3,
+            "protein_g": 0.2,
+            "carbs_g": 0.8,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "青椒约提供 3 kcal、0.2 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        },
+        {
+          "name": "青椒",
+          "confidence": 0.379,
+          "bbox": [
+            194.5,
+            611.2,
+            290.1,
+            283.0
+          ],
+          "mask_area_ratio": 0.0219,
+          "estimated_grams": [
+            10.9,
+            20.3
+          ],
+          "nutrition": {
+            "calories": 3,
+            "protein_g": 0.1,
+            "carbs_g": 0.7,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "青椒约提供 3 kcal、0.1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        },
+        {
+          "name": "西兰花",
+          "confidence": 0.379,
+          "bbox": [
+            648.0,
+            622.1,
+            430.9,
+            427.2
+          ],
+          "mask_area_ratio": 0.053,
+          "estimated_grams": [
+            31.8,
+            59.0
+          ],
+          "nutrition": {
+            "calories": 16,
+            "protein_g": 1.1,
+            "carbs_g": 3.3,
+            "fat_g": 0.2,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "西兰花约提供 16 kcal、1.1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "broccoli"
+        },
+        {
+          "name": "西兰花",
+          "confidence": 0.371,
+          "bbox": [
+            785.9,
+            849.7,
+            152.0,
+            163.1
+          ],
+          "mask_area_ratio": 0.007,
+          "estimated_grams": [
+            7.0,
+            13.0
+          ],
+          "nutrition": {
+            "calories": 4,
+            "protein_g": 0.2,
+            "carbs_g": 0.7,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "西兰花约提供 4 kcal、0.2 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "broccoli"
+        }
+      ],
+      "totals": {
+        "calories": 26,
+        "protein_g": 1.6,
+        "carbs_g": 5.5,
+        "fat_g": 0.2
+      },
+      "verdict": {
+        "calorie_status": "不足",
+        "protein_status": "不足",
+        "carb_ratio": "偏高",
+        "summary": "本餐估算约 26 kcal、蛋白质 1.6 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比偏高。热量主要来自西兰花（约 16 kcal）。"
+      },
+      "advice": [
+        "下一顿增加一掌心大小的瘦肉、鱼虾、鸡蛋或豆腐。",
+        "同时保持饮水，不需要用高糖饮料补充能量。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 194,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 0.042,
+        "protein_ratio": 0.036,
+        "carb_calorie_share": 0.846,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 4,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "yolo_friendly",
+    "image": "餐10.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "ok",
+      "foods": [
+        {
+          "name": "青椒",
+          "confidence": 0.658,
+          "bbox": [
+            608.2,
+            1186.0,
+            228.8,
+            284.6
+          ],
+          "mask_area_ratio": 0.0217,
+          "estimated_grams": [
+            10.8,
+            20.1
+          ],
+          "nutrition": {
+            "calories": 3,
+            "protein_g": 0.1,
+            "carbs_g": 0.7,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "青椒约提供 3 kcal、0.1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        },
+        {
+          "name": "西兰花",
+          "confidence": 0.585,
+          "bbox": [
+            560.5,
+            800.7,
+            206.0,
+            170.3
+          ],
+          "mask_area_ratio": 0.0088,
+          "estimated_grams": [
+            7.0,
+            13.0
+          ],
+          "nutrition": {
+            "calories": 4,
+            "protein_g": 0.2,
+            "carbs_g": 0.7,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "西兰花约提供 4 kcal、0.2 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "broccoli"
+        },
+        {
+          "name": "西兰花",
+          "confidence": 0.428,
+          "bbox": [
+            457.5,
+            887.4,
+            237.9,
+            253.5
+          ],
+          "mask_area_ratio": 0.0173,
+          "estimated_grams": [
+            10.4,
+            19.3
+          ],
+          "nutrition": {
+            "calories": 5,
+            "protein_g": 0.4,
+            "carbs_g": 1.1,
+            "fat_g": 0.1,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "偏高",
+            "summary": "西兰花约提供 5 kcal、0.4 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "broccoli"
+        },
+        {
+          "name": "牛奶",
+          "confidence": 0.362,
+          "bbox": [
+            23.0,
+            0.0,
+            532.4,
+            472.3
+          ],
+          "mask_area_ratio": 0.0816,
+          "estimated_grams": [
+            140.0,
+            259.9
+          ],
+          "nutrition": {
+            "calories": 122,
+            "protein_g": 6.4,
+            "carbs_g": 9.6,
+            "fat_g": 6.6,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "适中",
+            "summary": "牛奶约提供 122 kcal、6.4 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "milk"
+        },
+        {
+          "name": "鸡蛋",
+          "confidence": 0.331,
+          "bbox": [
+            401.4,
+            1257.0,
+            241.0,
+            280.6
+          ],
+          "mask_area_ratio": 0.0221,
+          "estimated_grams": [
+            24.0,
+            44.6
+          ],
+          "nutrition": {
+            "calories": 53,
+            "protein_g": 4.5,
+            "carbs_g": 0.4,
+            "fat_g": 3.8,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "适中",
+            "summary": "鸡蛋约提供 53 kcal、4.5 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "egg"
+        },
+        {
+          "name": "青椒",
+          "confidence": 0.218,
+          "bbox": [
+            756.9,
+            846.8,
+            136.9,
+            124.5
+          ],
+          "mask_area_ratio": 0.0049,
+          "estimated_grams": [
+            5.2,
+            9.8
+          ],
+          "nutrition": {
+            "calories": 2,
+            "protein_g": 0.1,
+            "carbs_g": 0.3,
+            "fat_g": 0.0,
+            "note": "按食物参考值估算，实际值受烹饪用油和分量影响"
+          },
+          "verdict": {
+            "calorie_status": "不足",
+            "protein_status": "偏少",
+            "carb_ratio": "适中",
+            "summary": "青椒约提供 2 kcal、0.1 g 蛋白质；整餐判断见上方结论。"
+          },
+          "source_id": "green_pepper"
+        }
+      ],
+      "totals": {
+        "calories": 189,
+        "protein_g": 11.7,
+        "carbs_g": 12.8,
+        "fat_g": 10.5
+      },
+      "verdict": {
+        "calorie_status": "不足",
+        "protein_status": "不足",
+        "carb_ratio": "适中",
+        "summary": "本餐估算约 189 kcal、蛋白质 11.7 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比适中。热量主要来自牛奶（约 122 kcal）。"
+      },
+      "advice": [
+        "下一顿增加一掌心大小的瘦肉、鱼虾、鸡蛋或豆腐。",
+        "同时保持饮水，不需要用高糖饮料补充能量。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [],
+      "duration_ms": 289,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 0.303,
+        "protein_ratio": 0.261,
+        "carb_calorie_share": 0.271,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 6,
+        "segmentation_used": true,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  },
+  {
+    "group": "school_mixed",
+    "image": "餐11.jpg",
+    "result": {
+      "method": "traditional",
+      "status": "degraded",
+      "foods": [],
+      "totals": {
+        "calories": 0,
+        "protein_g": 0.0,
+        "carbs_g": 0.0,
+        "fat_g": 0.0
+      },
+      "verdict": {
+        "calorie_status": "不足",
+        "protein_status": "不足",
+        "carb_ratio": "适中",
+        "summary": "本餐估算约 0 kcal、蛋白质 0 g，单餐参考值约 623 kcal / 44.8 g 蛋白质；热量不足，蛋白质不足，碳水占比适中。没有识别到支持范围内的食物。"
+      },
+      "advice": [
+        "请换用俯拍、光线均匀且完整包含餐盘的照片后重试。",
+        "同时保持饮水，不需要用高糖饮料补充能量。"
+      ],
+      "long_term_note": "单顿不决定结果，但这一餐的事实需要看见；连续记录一周以上的趋势更有参考价值。",
+      "disclaimer": "仅供学习参考，不构成医疗或营养建议。",
+      "warnings": [
+        "未检测到支持范围内的食物；可换用俯拍、光线更好的图片。"
+      ],
+      "duration_ms": 19,
+      "overlay_image_base64": null,
+      "metadata": {
+        "target": {
+          "daily_calories": 1625,
+          "meal_calories": 623,
+          "meal_protein_g": 44.8,
+          "estimate_only": true
+        },
+        "calorie_ratio": 0.0,
+        "protein_ratio": 0.0,
+        "carb_calorie_share": 0.0,
+        "pipeline": "YOLO-World -> MobileSAM -> nutrition CSV -> rules",
+        "detection_count": 0,
+        "segmentation_used": false,
+        "models_available": true,
+        "device": "0"
+      }
+    }
+  }
+]

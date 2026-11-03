@@ -29,3 +29,5 @@ data/raw/*
 Thumbs.db
 .idea/
 .vscode/
+# Generated evaluation overlays
+reports/traditional_eval/overlays/
