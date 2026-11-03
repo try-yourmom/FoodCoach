@@ -21,9 +21,9 @@ def group_for(path: Path) -> str:
     if not match:
         return "other"
     number = int(match.group(1))
-    if number in {1, 2, 3, 4, 5, 11}:
+    if number in {1, 2, 3, 4, 5, 6, 11}:
         return "school_mixed"
-    if 6 <= number <= 10:
+    if 7 <= number <= 9:
         return "yolo_friendly"
     return "other"
 
