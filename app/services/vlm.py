@@ -206,7 +206,7 @@ class VLMService:
             duration_ms=round((time.perf_counter() - started) * 1000),
             metadata={
                 **target_metadata,
-                "pipeline": "Qwen-VL structured JSON -> Pydantic validation -> rules",
+                "pipeline": "Qwen3.8-Omni-Flash structured JSON -> Pydantic validation -> rules",
                 "provider": "DashScope OpenAI-compatible",
                 "model": model,
                 "attempts": attempts,
@@ -240,5 +240,5 @@ class VLMService:
             disclaimer=DISCLAIMER,
             warnings=[message],
             duration_ms=round((time.perf_counter() - started) * 1000),
-            metadata={"pipeline": "Qwen-VL structured JSON", "configured": False},
+            metadata={"pipeline": "Qwen3.8-Omni-Flash structured JSON", "configured": False},
         )

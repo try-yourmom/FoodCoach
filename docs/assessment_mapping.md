@@ -3,12 +3,12 @@
 | 考核点 | 本项目落实 |
 |---|---|
 | Transformer 基本概念 | [model_and_data_notes.md](model_and_data_notes.md) 解释 token、embedding、self-attention、位置编码，以及 VLM 中图文 token 的关系 |
-| 编码器 / 解码器与多模态输入 | 文档对比传统视觉模型的检测头与 Qwen-VL 的图文编码、生成解码流程 |
+| 编码器 / 解码器与多模态输入 | 文档对比传统视觉模型的检测头与 Qwen3.8-Omni-Flash 的图文编码、生成解码流程 |
 | OpenCV 图像处理 | 读取、EXIF 方向修正、缩放、裁剪数据、绘制 bbox 与透明掩膜 |
 | YOLO 目标检测 | YOLO-World 输出类别、置信度、边界框，并设置置信度过滤和同类去重 |
 | 提示式图像分割 | 把 YOLO bbox 作为 MobileSAM 的框提示，生成每个食物的二值掩膜 |
 | 开源模型使用流程 | 文档和 `scripts/download_models.py` 说明输入、输出、权重下载与降级行为 |
-| 大模型 API / SDK | `VLMService` 使用 OpenAI 兼容 SDK 调用 Qwen-VL |
+| 大模型 API / SDK | `VLMService` 使用 OpenAI 兼容 SDK 调用 Qwen3.8-Omni-Flash |
 | 提示词与结构化输出 | 固定 JSON Schema、Pydantic 校验、修复重试和错误降级 |
 | 两种方案、同一组输入 | `/api/v1/assess` 接收一次上传，并发调用两条管线 |
 | 并排展示 | Streamlit 左右两列展示传统与大模型结果 |
@@ -26,6 +26,6 @@
 3. 选择减脂、练后、26 cm 餐盘
 4. 点击“开始并排评估”
 5. 左侧展示 bbox、掩膜、食物表和规则反馈
-6. 右侧展示 Qwen-VL 识别、营养估算和自然语言反馈
+6. 右侧展示 Qwen3.8-Omni-Flash 识别、营养估算和自然语言反馈
 7. 下方展示两方案对比
 8. 下载完整 JSON

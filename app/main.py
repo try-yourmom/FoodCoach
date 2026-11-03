@@ -177,5 +177,5 @@ def _vlm_error_result(exc: Exception) -> MethodResult:
         long_term_note="模型不可用时不应编造营养结论。",
         disclaimer=DISCLAIMER,
         warnings=[message],
-        metadata={"pipeline": "Qwen-VL structured JSON"},
+        metadata={"pipeline": "Qwen3.8-Omni-Flash structured JSON"},
     )

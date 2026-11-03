@@ -23,7 +23,7 @@ flowchart LR
   E --> F[掩膜面积估算分量]
   F --> G[nutrition.csv 计算营养]
   G --> H[规则引擎: 事实 -> 解释 -> 动作]
-  C --> I[Qwen-VL 结构化提示词]
+  C --> I[Qwen3.8-Omni-Flash 结构化提示词]
   I --> J[JSON 解析与 Pydantic 校验]
   J --> K[失败重试 / 安全降级]
   H --> L[统一 JSON]
@@ -203,7 +203,7 @@ app/
   services/
     traditional.py        YOLO-World + MobileSAM
     portion.py            掩膜面积到克数区间
-    vlm.py                Qwen-VL 调用、重试与校验
+    vlm.py                Qwen3.8-Omni-Flash 调用、重试与校验
     comparison.py         两方案逐项对比
 frontend/
   streamlit_app.py        并排演示页面
