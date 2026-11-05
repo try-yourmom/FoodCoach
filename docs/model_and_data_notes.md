@@ -23,8 +23,9 @@ YOLO-World 支持文本提示类别，可直接检测：
 
 ```text
 chicken breast, egg, cooked white rice, broccoli, beef, salmon,
-oats, banana, milk, tofu, sweet potato, lettuce, tomato, shrimp,
-whole wheat bread, potato, corn, plain yogurt, pork, green bell pepper
+pumpkin, carrot, orange, tofu, cauliflower, lettuce, tomato,
+purple cabbage, whole wheat bread, potato, corn, mushroom,
+pork, green bell pepper
 ```
 
 代价是对中餐混合菜、遮挡和非常规摆盘可能漏检。这是项目明确记录的局限，而不是隐藏误差。
