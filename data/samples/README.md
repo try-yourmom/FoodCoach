@@ -16,10 +16,6 @@
 
 - `healthy_bowl_unsplash.jpg`
   - CDN：https://images.unsplash.com/photo-1490645935967-10de6ba17061
-- `meal_bowl_unsplash.jpg`
-  - CDN：https://images.unsplash.com/photo-1546069901-ba9599a7e63c
-- `meal_prep_unsplash.jpg`
-  - CDN：https://images.unsplash.com/photo-1547592180-85f173990554
 
 早期示例只用于开发与界面联调，不声称是训练数据。
 

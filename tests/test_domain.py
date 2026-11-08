@@ -1,8 +1,8 @@
 import pytest
+from helpers import build_food
 
 from app.catalog import catalog_by_prompt, load_catalog, supported_prompts
 from app.nutrition import calculate_nutrition, total_nutrition
-from app.partial_helpers import build_food
 from app.rule_engine import estimate_targets, evaluate_meal
 from app.schemas import FoodItem, Goal, MealContext, UserProfile
 

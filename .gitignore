@@ -17,11 +17,7 @@ models/*
 weights/
 !models/.gitkeep
 outputs/
-reports/generated/
 
-# Local data
-data/raw/*
-!data/raw/.gitkeep
 *.log
 
 # OS / editors
@@ -29,5 +25,3 @@ data/raw/*
 Thumbs.db
 .idea/
 .vscode/
-# Generated evaluation overlays
-reports/traditional_eval/overlays/

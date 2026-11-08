@@ -1,6 +1,7 @@
 
+from helpers import build_food
+
 from app.catalog import load_catalog
-from app.partial_helpers import build_food
 from app.schemas import MethodResult
 from app.services.comparison import build_comparison
 from app.services.portion import estimate_portion

@@ -170,18 +170,14 @@ Content-Type: multipart/form-data
 }
 ```
 
-## 示例输出与 Schema
+## 示例输出
 
 - 实际运行导出的示例：[example_output.json](docs/examples/example_output.json)
-- 统一数据契约：[schemas](docs/schemas)
 - 重新导出当前示例：
 
 ```powershell
 F:\Miniforge3\envs\lingjing-ai\python.exe scripts\export_example.py
-F:\Miniforge3\envs\lingjing-ai\python.exe app\schemas_export.py
 ```
-
-未配置 VLM Key 时，示例中的大模型部分会明确显示为 `error`，不会生成虚假结果；配置 Key 后重新导出即可得到完整双方案示例。
 
 ## 测试
 
@@ -210,23 +206,10 @@ frontend/
 data/
   nutrition.csv           20 种食材参考值
   samples/                固定示例图片
-docs/                     架构、对比、考核映射与视频脚本
+docs/                     架构、对比、考核映射与项目说明
 scripts/                  模型下载与启动脚本
 tests/                    自动化测试
 ```
-
-## 首轮批量评测
-
-在用户提供的 11 张图片上完成了传统方案首轮基线：
-
-- 学校混菜 7 张：7 张有检测结果，平均 2.86 项
-- 白底四格盘 3 张：3 张有检测结果，平均 3.67 项
-- 其他网图 1 张：平均 7 项
-- 首张图片包含模型加载，耗时约 13 秒；预热后单图约 0.1～0.4 秒
-- 当前不能计算 mAP，因为还没有人工标注边界框
-
-详细结果见 [traditional_eval/summary.md](reports/traditional_eval/summary.md) 和
-[threshold_analysis.md](reports/traditional_eval/threshold_analysis.md)。
 
 ## 已知限制
 
@@ -242,7 +225,6 @@ tests/                    自动化测试
 - [方案对比](docs/solution_comparison.md)
 - [考核点映射](docs/assessment_mapping.md)
 - [数据与模型说明](docs/model_and_data_notes.md)
-- [视频演示脚本](docs/video_script.md)
 - [个人说明草稿](docs/personal_reflection.md)
 
 ## 参考与创新
