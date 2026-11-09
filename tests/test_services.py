@@ -1,10 +1,12 @@
 
+import numpy as np
 from helpers import build_food
 
 from app.catalog import load_catalog
-from app.schemas import MethodResult
+from app.schemas import MethodResult, UserProfile
 from app.services.comparison import build_comparison
 from app.services.portion import estimate_portion
+from app.services.traditional import Detection, TraditionalVisionService
 from app.services.vlm import VLMService
 
 
@@ -48,3 +50,35 @@ def test_comparison_reports_missing_vlm():
     report = build_comparison(traditional, vlm)
     assert "不可用" in report.rows[0].vlm
     assert "仅完成" in report.summary
+
+def test_traditional_pipeline_converts_rgb_to_bgr_once():
+    rice = next(item for item in load_catalog() if item.food_id == "rice")
+    received = {}
+
+    class FakeDetector:
+        def detect(self, image_bgr, confidence):
+            received["detector"] = image_bgr
+            return [
+                Detection(
+                    record=rice,
+                    confidence=0.9,
+                    bbox_xyxy=(0.0, 0.0, 4.0, 4.0),
+                )
+            ]
+
+    class FakeSegmenter:
+        def segment(self, image_bgr, detections):
+            received["segmenter"] = image_bgr
+            return True
+
+    service = TraditionalVisionService()
+    service.detector = FakeDetector()
+    service.segmenter = FakeSegmenter()
+    image_rgb = np.zeros((8, 8, 3), dtype=np.uint8)
+    image_rgb[0, 0] = (255, 0, 0)
+
+    service.assess(image_rgb, UserProfile())
+
+    np.testing.assert_array_equal(received["detector"][0, 0], [0, 0, 255])
+    assert received["detector"] is received["segmenter"]
+    np.testing.assert_array_equal(image_rgb[0, 0], [255, 0, 0])

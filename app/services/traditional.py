@@ -43,13 +43,13 @@ class YoloWorldDetector:
         self._model = model
         return model
 
-    def detect(self, image_rgb: np.ndarray, confidence: float) -> list[Detection]:
+    def detect(self, image_bgr: np.ndarray, confidence: float) -> list[Detection]:
         prompts = supported_prompts()
         records = catalog_by_prompt()
         with _MODEL_LOCK:
             model = self._load()
             results = model.predict(
-                source=image_rgb,
+                source=image_bgr,
                 conf=confidence,
                 imgsz=settings.detection_image_size,
                 device=settings.resolved_device(),
@@ -99,13 +99,13 @@ class MobileSamSegmenter:
         self._model = SAM(str(settings.sam_model_path))
         return self._model
 
-    def segment(self, image_rgb: np.ndarray, detections: Sequence[Detection]) -> bool:
+    def segment(self, image_bgr: np.ndarray, detections: Sequence[Detection]) -> bool:
         if not detections:
             return True
         boxes = [list(detection.bbox_xyxy) for detection in detections]
         with _MODEL_LOCK:
             model = self._load()
-            results = model.predict(source=image_rgb, bboxes=boxes, verbose=False, device=settings.resolved_device())
+            results = model.predict(source=image_bgr, bboxes=boxes, verbose=False, device=settings.resolved_device())
         if not results or results[0].masks is None:
             return False
         masks = results[0].masks.data.detach().cpu().numpy()
@@ -130,8 +130,9 @@ class TraditionalVisionService:
     def assess(self, image_rgb: np.ndarray, profile: UserProfile) -> MethodResult:
         started = time.perf_counter()
         warnings: list[str] = []
-        detections = self.detector.detect(image_rgb, settings.detection_confidence)
-        segmented = self.segmenter.segment(image_rgb, detections) if detections else True
+        image_bgr = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR)
+        detections = self.detector.detect(image_bgr, settings.detection_confidence)
+        segmented = self.segmenter.segment(image_bgr, detections) if detections else True
         if detections and not segmented:
             warnings.append("SAM 未返回可对齐的掩膜，已降级为边界框面积估算。")
 
