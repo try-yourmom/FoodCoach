@@ -1,4 +1,4 @@
-﻿FROM python:3.11-slim
+FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir \
     torch==2.15.0+cpu torchvision==0.29.2+cpu
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt && pip install openai-clip==1.0.1
+RUN pip install -r requirements.txt
 
 COPY app ./app
 COPY frontend ./frontend

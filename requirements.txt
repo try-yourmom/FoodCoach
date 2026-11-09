@@ -7,6 +7,7 @@ pandas==3.0.6
 Pillow==12.3.0
 opencv-python==5.0.0.93
 ultralytics==8.4.189
+openai-clip==1.0.1
 streamlit==1.66.1
 openai==2.54.0
 python-dotenv==1.2.4
