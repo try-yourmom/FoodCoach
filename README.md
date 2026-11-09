@@ -106,6 +106,54 @@ F:\Miniforge3\envs\lingjing-ai\python.exe scripts\download_models.py
 
 也可以运行 `.\scripts\run_all.ps1`，脚本会后台启动 API，再启动 Streamlit。
 
+### 5. Docker / Linux 部署
+
+本项目已验证可在 Ubuntu 24.04 + Docker Compose 环境运行。推荐使用 CPU 实例，服务器至少 2 核 4G；低内存实例需要配置 Swap。
+
+服务器上准备：
+
+```bash
+sudo apt-get update
+sudo apt-get install -y docker.io docker-compose-v2
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+把项目代码、`models/` 中的 YOLO/SAM 权重以及 `.env` 上传到服务器。`.env` 不进入 Git，必须通过环境变量或单独上传配置。上传后请限制权限：
+
+```bash
+chmod 600 .env
+```
+
+YOLO-World 还需要 CLIP 文本编码器；如果服务器没有缓存，可提前下载到项目的 `weights/clip/`，Compose 会以只读方式挂载该目录：
+
+```bash
+mkdir -p weights/clip
+curl -L --fail -o weights/clip/ViT-B-32.pt \
+  https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt
+```
+
+启动完整服务：
+
+```bash
+docker compose up -d --build
+docker compose ps
+```
+
+服务器防火墙或安全组至少放行：
+
+- `8000/tcp`：FastAPI 和接口文档
+- `8501/tcp`：Streamlit 页面
+
+访问地址：
+
+```text
+http://<服务器公网IP>:8501/
+http://<服务器公网IP>:8000/docs
+```
+
+首次加载 YOLO-World、CLIP 和 MobileSAM 时 CPU 推理会明显变慢，后续请求会复用已加载模型。若 Docker Hub 拉取基础镜像超时，可先从可用镜像源拉取 `python:3.11-slim` 并重新标记为同名镜像。
+
 ## API
 
 ### 健康检查
