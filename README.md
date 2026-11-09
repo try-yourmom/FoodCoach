@@ -221,11 +221,9 @@ tests/                    自动化测试
 
 ## 文档
 
-- [架构说明](docs/architecture.md)
-- [方案对比](docs/solution_comparison.md)
-- [考核点映射](docs/assessment_mapping.md)
-- [数据与模型说明](docs/model_and_data_notes.md)
-- [个人说明草稿](docs/personal_reflection.md)
+- [项目构想与实现说明](docs/PlateLens项目构想与实现说明.docx)
+- [架构说明](docs/PlateLens架构说明.docx)
+- [方案对比](docs/两种方案对比.docx)
 
 ## 参考与创新
 
