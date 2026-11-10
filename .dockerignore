@@ -12,3 +12,5 @@ models/*
 !models/.gitkeep
 weights
 outputs
+instance
+uploads

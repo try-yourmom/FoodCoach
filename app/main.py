@@ -9,11 +9,13 @@ from typing import Annotated
 from fastapi import Depends, FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import ValidationError
+from sqlalchemy.orm import Session
 
 from app.auth import get_current_user, router as auth_router
 from app.catalog import catalog_payload
 from app.config import settings
-from app.db import init_db
+from app.db import get_db, init_db
+from app.history import persist_assessment, router as history_router
 from app.models import User
 from app.rule_engine import DISCLAIMER
 from app.schemas import (
@@ -42,11 +44,12 @@ app = FastAPI(
     description="同一餐盘图片的传统视觉方案与多模态大模型方案对比。",
 )
 app.include_router(auth_router)
+app.include_router(history_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:8501", "http://127.0.0.1:8501"],
     allow_credentials=False,
-    allow_methods=["GET", "POST"],
+    allow_methods=["GET", "POST", "PATCH", "DELETE"],
     allow_headers=["*"],
 )
 
@@ -101,6 +104,7 @@ def catalog():
 async def assess_meal(
     image: Annotated[UploadFile, File()],
     current_user: Annotated[User, Depends(get_current_user)],
+    db: Annotated[Session, Depends(get_db)],
     height_cm: Annotated[float, Form()] = 170,
     weight_kg: Annotated[float, Form()] = 65,
     body_fat_pct: Annotated[float | None, Form()] = None,
@@ -144,13 +148,15 @@ async def assess_meal(
     if isinstance(vlm_result, Exception):
         vlm_result = _vlm_error_result(vlm_result)
 
-    return AssessmentBundle(
+    bundle = AssessmentBundle(
         request_id=request_id,
         traditional=traditional_result,
         vlm=vlm_result,
         comparison=build_comparison(traditional_result, vlm_result),
         profile=profile,
     )
+    persist_assessment(db, request_id, current_user.id, raw, profile, bundle)
+    return bundle
 
 
 def _traditional_error_result(exc: Exception) -> MethodResult:

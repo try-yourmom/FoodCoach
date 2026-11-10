@@ -25,3 +25,5 @@ outputs/
 Thumbs.db
 .idea/
 .vscode/
+instance/
+uploads/

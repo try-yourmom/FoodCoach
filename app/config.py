@@ -25,6 +25,7 @@ class Settings:
         self.nutrition_path = self.data_dir / "nutrition.csv"
         self.sample_dir = self.data_dir / "samples"
         self.database_url = os.getenv("DATABASE_URL", "sqlite:///instance/foodcoach.db")
+        self.uploads_dir = self._resolve_path(os.getenv("UPLOAD_DIR", "uploads"))
         self.jwt_secret = os.getenv("JWT_SECRET", "dev-only-change-me").strip()
         self.jwt_algorithm = os.getenv("JWT_ALGORITHM", "HS256").strip()
         self.jwt_expire_minutes = int(os.getenv("JWT_EXPIRE_MINUTES", "1440"))

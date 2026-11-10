@@ -165,6 +165,29 @@ class ErrorResponse(BaseModel):
     request_id: str | None = None
 
 
+
+class HistorySummary(BaseModel):
+    id: str
+    status: str
+    note: str = ""
+    created_at: datetime
+    finished_at: datetime | None = None
+    error_message: str | None = None
+
+
+class HistoryListResponse(BaseModel):
+    items: list[HistorySummary]
+
+
+class HistoryDetailResponse(HistorySummary):
+    profile: UserProfile | None = None
+    result: AssessmentBundle | None = None
+
+
+class HistoryNoteUpdate(BaseModel):
+    note: str = Field(default="", max_length=500)
+
+
 class VLMNutritionPayload(BaseModel):
     calories: float = Field(ge=0, le=10000)
     protein_g: float = Field(ge=0, le=1000)
