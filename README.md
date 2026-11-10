@@ -53,7 +53,7 @@ flowchart LR
 
 鸡胸肉、鸡蛋、米饭、西兰花、牛肉、三文鱼、南瓜、胡萝卜、橙子、豆腐、花菜、生菜、番茄、紫甘蓝、全麦面包、土豆、玉米、蘑菇、猪肉、青椒。
 
-不支持：注册登录、多用户并发、长期饮食记录、健身计划管理、移动端、精确称重。
+当前限制：已支持注册登录、JWT、SQLite 历史记录和 Redis/RQ 异步任务；不提供密码找回、多用户管理后台、长期健身计划、移动端和精确称重。
 
 ## 快速开始
 
@@ -265,13 +265,68 @@ tests/                    自动化测试
 2. 单张图片没有深度和真实尺度，克数只能根据掩膜面积、餐盘直径和食材密度给出区间。
 3. 烹饪油、酱汁和混合菜会显著影响营养值，营养表无法覆盖所有做法。
 4. 多模态模型可能产生数值幻觉；本项目会做结构和范围校验，但不能保证客观正确。
-5. 当前为单机演示版，未实现多用户、任务队列和持久化。
+5. 当前为单机演示版，使用 SQLite 和单个 RQ Worker，不支持多 Worker 调度和生产级高可用。
 
 ## 文档
 
 - [项目构想与实现说明](docs/PlateLens项目构想与实现说明.docx)
 - [架构说明](docs/PlateLens架构说明.docx)
 - [方案对比](docs/两种方案对比.docx)
+- [开发经历与部署说明](docs/开发经历与部署说明_.docx)
+
+
+## 第三阶段补充：认证、异步任务与历史记录
+
+### 认证
+
+- `POST /api/v1/auth/register`：注册用户
+- `POST /api/v1/auth/login`：表单登录，返回 JWT
+- `GET /api/v1/auth/me`：读取当前用户
+- 评估和历史接口均要求 `Authorization: Bearer <token>`
+- 密码使用 bcrypt 哈希，JWT 密钥从 `JWT_SECRET` 读取
+
+### 异步评估
+
+前端不再使用同步接口作为主路径，流程为：
+
+```text
+POST /api/v1/assess/jobs
+-> 返回 202 和 assessment_id
+-> GET /api/v1/assess/jobs/{assessment_id} 轮询
+-> succeeded / failed
+-> succeeded 时读取 result
+```
+
+任务由独立 RQ Worker 消费。Worker 启动时会检查数据库中 `queued` 和 `running` 的任务并重新投递，用于 Worker 中断后的恢复。当前只运行一个 Worker，避免 2GB 内存服务器被并发推理压垮。
+
+### 历史记录
+
+- `GET /api/v1/history`：当前用户历史列表
+- `GET /api/v1/history/{id}`：详情和完整结果
+- `PATCH /api/v1/history/{id}`：更新备注
+- `DELETE /api/v1/history/{id}`：删除记录和图片
+- SQLite 数据保存在 `instance/foodcoach.db`
+- 上传图片保存在 `uploads/`
+- Redis 队列数据保存在 `redis-data`
+
+### Docker 运行组成
+
+```text
+redis     Redis 7 + RQ 队列
+api       FastAPI + JWT + SQLite 接口
+worker    RQ Worker + YOLO-World/MobileSAM/VLM
+frontend  Streamlit 页面
+```
+
+Docker Compose 已将 `instance/`、`uploads/` 和 `redis-data` 纳入持久化。服务器使用 CPU 版 PyTorch，Worker 设置 `OMP_NUM_THREADS=1`、`MKL_NUM_THREADS=1`、`TORCH_NUM_THREADS=1`，Redis 最大内存 64MB。
+
+### 测试
+
+```powershell
+F:\Miniforge3\envs\lingjing-ai\python.exe -m pytest -q
+```
+
+测试覆盖 JWT 认证、用户隔离、历史 CRUD、异步任务创建/处理/恢复、双方案结果和前端登录页渲染。
 
 ## 参考与创新
 
