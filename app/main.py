@@ -2,15 +2,19 @@ from __future__ import annotations
 
 import asyncio
 import uuid
+from contextlib import asynccontextmanager
 from functools import lru_cache
 from typing import Annotated
 
-from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import Depends, FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import ValidationError
 
+from app.auth import get_current_user, router as auth_router
 from app.catalog import catalog_payload
 from app.config import settings
+from app.db import init_db
+from app.models import User
 from app.rule_engine import DISCLAIMER
 from app.schemas import (
     AssessmentBundle,
@@ -24,11 +28,20 @@ from app.services.image_utils import InvalidImageError, decode_image
 from app.services.traditional import TraditionalVisionService
 from app.services.vlm import VLMService
 
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    init_db()
+    yield
+
+
 app = FastAPI(
     title="FoodCoach PlateLens API",
+    lifespan=lifespan,
     version=settings.app_version,
     description="同一餐盘图片的传统视觉方案与多模态大模型方案对比。",
 )
+app.include_router(auth_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:8501", "http://127.0.0.1:8501"],
@@ -87,6 +100,7 @@ def catalog():
 @app.post("/api/v1/assess", response_model=AssessmentBundle)
 async def assess_meal(
     image: Annotated[UploadFile, File()],
+    current_user: Annotated[User, Depends(get_current_user)],
     height_cm: Annotated[float, Form()] = 170,
     weight_kg: Annotated[float, Form()] = 65,
     body_fat_pct: Annotated[float | None, Form()] = None,

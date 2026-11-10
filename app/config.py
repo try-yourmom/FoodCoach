@@ -24,6 +24,10 @@ class Settings:
         self.data_dir = PROJECT_ROOT / "data"
         self.nutrition_path = self.data_dir / "nutrition.csv"
         self.sample_dir = self.data_dir / "samples"
+        self.database_url = os.getenv("DATABASE_URL", "sqlite:///instance/foodcoach.db")
+        self.jwt_secret = os.getenv("JWT_SECRET", "dev-only-change-me").strip()
+        self.jwt_algorithm = os.getenv("JWT_ALGORITHM", "HS256").strip()
+        self.jwt_expire_minutes = int(os.getenv("JWT_EXPIRE_MINUTES", "1440"))
 
         self.yolo_model_path = self._resolve_path(
             os.getenv("YOLO_MODEL", "models/yolov8s-worldv2.pt")
