@@ -1,17 +1,71 @@
 services:
+  redis:
+    image: redis:7-alpine
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+      - --maxmemory
+      - 64mb
+      - --maxmemory-policy
+      - noeviction
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
   api:
     build: .
     command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
     env_file:
       - .env
     environment:
+      DATABASE_URL: sqlite:////app/instance/foodcoach.db
+      REDIS_URL: redis://redis:6379/0
+      UPLOAD_DIR: /app/uploads
       DEVICE: ${DEVICE:-cpu}
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      TORCH_NUM_THREADS: "1"
     volumes:
       - ./models:/app/models:ro
       - ./data:/app/data:ro
       - ./weights/clip:/root/.cache/clip:ro
+      - ./instance:/app/instance
+      - ./uploads:/app/uploads
     ports:
       - "8000:8000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  worker:
+    build: .
+    command: ["python", "-m", "app.worker"]
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: sqlite:////app/instance/foodcoach.db
+      REDIS_URL: redis://redis:6379/0
+      UPLOAD_DIR: /app/uploads
+      DEVICE: ${DEVICE:-cpu}
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      TORCH_NUM_THREADS: "1"
+    volumes:
+      - ./models:/app/models:ro
+      - ./data:/app/data:ro
+      - ./weights/clip:/root/.cache/clip:ro
+      - ./instance:/app/instance
+      - ./uploads:/app/uploads
+    depends_on:
+      redis:
+        condition: service_healthy
     restart: unless-stopped
 
   frontend:
@@ -30,3 +84,6 @@ services:
     ports:
       - "8501:8501"
     restart: unless-stopped
+
+volumes:
+  redis-data:

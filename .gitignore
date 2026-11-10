@@ -27,3 +27,4 @@ Thumbs.db
 .vscode/
 instance/
 uploads/
+redis-data/
