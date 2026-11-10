@@ -4,7 +4,7 @@ import pytest
 from fastapi.testclient import TestClient
 from PIL import Image
 
-import app.main as main_module
+import app.services.assessment_runner as runner_module
 from app.catalog import load_catalog
 from app.config import settings
 from app.main import app
@@ -66,8 +66,8 @@ def _png_bytes() -> bytes:
 
 def test_assess_persists_and_history_crud(client, monkeypatch):
     headers = _auth_headers(client, "history_owner")
-    monkeypatch.setattr(main_module, "get_traditional_service", lambda: FakeService(_method_result("traditional")))
-    monkeypatch.setattr(main_module, "get_vlm_service", lambda: FakeService(_method_result("vlm")))
+    monkeypatch.setattr(runner_module, "get_traditional_service", lambda: FakeService(_method_result("traditional")))
+    monkeypatch.setattr(runner_module, "get_vlm_service", lambda: FakeService(_method_result("vlm")))
 
     response = client.post(
         "/api/v1/assess",

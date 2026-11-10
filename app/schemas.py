@@ -188,6 +188,11 @@ class HistoryNoteUpdate(BaseModel):
     note: str = Field(default="", max_length=500)
 
 
+class JobCreatedResponse(BaseModel):
+    id: str
+    status: str
+
+
 class VLMNutritionPayload(BaseModel):
     calories: float = Field(ge=0, le=10000)
     protein_g: float = Field(ge=0, le=1000)

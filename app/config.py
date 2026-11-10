@@ -26,6 +26,9 @@ class Settings:
         self.sample_dir = self.data_dir / "samples"
         self.database_url = os.getenv("DATABASE_URL", "sqlite:///instance/foodcoach.db")
         self.uploads_dir = self._resolve_path(os.getenv("UPLOAD_DIR", "uploads"))
+        self.redis_url = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0").strip()
+        self.queue_name = os.getenv("QUEUE_NAME", "foodcoach-assessments").strip()
+        self.job_timeout_seconds = int(os.getenv("JOB_TIMEOUT_SECONDS", "900"))
         self.jwt_secret = os.getenv("JWT_SECRET", "dev-only-change-me").strip()
         self.jwt_algorithm = os.getenv("JWT_ALGORITHM", "HS256").strip()
         self.jwt_expire_minutes = int(os.getenv("JWT_EXPIRE_MINUTES", "1440"))
